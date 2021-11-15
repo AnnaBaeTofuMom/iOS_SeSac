@@ -1,0 +1,19 @@
+/* 
+  LocalizableStrings.strings
+  SeSAC_WEEK6
+
+  Created by 배경원 on 2021/11/01.
+  
+*/
+"Home" = "Home";
+"Cancel" = "Cancel";
+"Save" = "Save";
+"Title" = "Title";
+"Please Select Date" = "Please Select Date";
+"Content" = "Content";
+"Date" = "Date";
+"Calendar" = "Calendar";
+"Search" = "Search";
+"Setting" = "Settings";
+"I Like Butt" = "I Like Butt";
+

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add View View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="Content" id="Y6W-OH-hqX" customClass="AddViewViewController" customModule="SeSAC_WEEK6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYz-da-DlP">
+                                <rect key="frame" x="30" y="74" width="49" height="31"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aYp-zj-Sec"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="id5-3N-OGn">
+                                <rect key="frame" x="335" y="74" width="49" height="31"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="저장"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3LT-dQ-kWv"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yBu-GI-rMW">
+                                <rect key="frame" x="30" y="115" width="354" height="180"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="0vP-iK-mQh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqt-Iz-q0I">
+                                <rect key="frame" x="30" y="359" width="354" height="44"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="pvG-lA-j5k"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="날짜를 선택해 주세요"/>
+                                <connections>
+                                    <action selector="dateButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IvL-bJ-H4P"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="제목" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="df8-In-xnR">
+                                <rect key="frame" x="30" y="305" width="354" height="44"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bz3-8b-Hrd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="내용쓰기" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1t5-aS-dap">
+                                <rect key="frame" x="30" y="413" width="354" height="419"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="354" id="ZyD-91-7m1"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mYz-da-DlP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="5eB-bo-MtN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1t5-aS-dap" secondAttribute="bottom" constant="30" id="6LU-BQ-U3z"/>
+                            <constraint firstItem="mYz-da-DlP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="Atw-PV-Dw9"/>
+                            <constraint firstItem="df8-In-xnR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="F3z-D2-ykS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="id5-3N-OGn" secondAttribute="trailing" constant="30" id="FgI-ao-NOv"/>
+                            <constraint firstItem="id5-3N-OGn" firstAttribute="top" secondItem="mYz-da-DlP" secondAttribute="top" id="G15-MM-HvU"/>
+                            <constraint firstItem="xqt-Iz-q0I" firstAttribute="top" secondItem="df8-In-xnR" secondAttribute="bottom" constant="10" id="M2F-09-waf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xqt-Iz-q0I" secondAttribute="trailing" constant="30" id="MPK-3l-HYA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="df8-In-xnR" secondAttribute="trailing" constant="30" id="PWT-YD-DaO"/>
+                            <constraint firstItem="df8-In-xnR" firstAttribute="top" secondItem="yBu-GI-rMW" secondAttribute="bottom" constant="10" id="Qzw-yn-2IZ"/>
+                            <constraint firstItem="1t5-aS-dap" firstAttribute="top" secondItem="xqt-Iz-q0I" secondAttribute="bottom" constant="10" id="flW-9w-lnu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yBu-GI-rMW" secondAttribute="trailing" constant="30" id="hSx-AH-jBj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1t5-aS-dap" secondAttribute="trailing" constant="30" id="us6-WE-aZq"/>
+                            <constraint firstItem="yBu-GI-rMW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="wo6-il-ZV8"/>
+                            <constraint firstItem="yBu-GI-rMW" firstAttribute="top" secondItem="mYz-da-DlP" secondAttribute="bottom" constant="10" id="y9I-mw-FwB"/>
+                            <constraint firstItem="xqt-Iz-q0I" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="ypI-Gs-zMj"/>
+                            <constraint firstItem="1t5-aS-dap" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="ztx-rg-mbq"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DDc-fr-wzi" appends="YES" id="lkC-mg-1l3"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="mYz-da-DlP" id="xxm-e2-tmA"/>
+                        <outlet property="contentImageView" destination="yBu-GI-rMW" id="vt7-g6-6up"/>
+                        <outlet property="datePickerButton" destination="xqt-Iz-q0I" id="lGZ-dJ-3yZ"/>
+                        <outlet property="detailTextView" destination="1t5-aS-dap" id="lzO-M4-FWt"/>
+                        <outlet property="saveButton" destination="id5-3N-OGn" id="aI8-xe-HcD"/>
+                        <outlet property="titleTextField" destination="df8-In-xnR" id="uJH-6P-8rH"/>
+                        <outlet property="uiView" destination="5EZ-qb-Rvc" id="B94-nq-0cf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DDc-fr-wzi">
+                    <connections>
+                        <action selector="tapGestureTouched:" destination="Y6W-OH-hqX" id="U42-RN-cqw"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="78.348214285714278"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="q6E-FD-QEf">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerViewController" id="bSf-5s-g5I" customClass="DatePickerViewController" customModule="SeSAC_WEEK6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oxo-Zb-BK2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2xm-WZ-SGh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L3D-un-ZPq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L3D-un-ZPq" firstAttribute="bottom" secondItem="2xm-WZ-SGh" secondAttribute="bottom" id="Ce8-va-dSS"/>
+                            <constraint firstItem="L3D-un-ZPq" firstAttribute="trailing" secondItem="2xm-WZ-SGh" secondAttribute="trailing" id="TS4-a2-FrS"/>
+                            <constraint firstItem="2xm-WZ-SGh" firstAttribute="leading" secondItem="Oxo-Zb-BK2" secondAttribute="leading" id="ZRe-46-Umd"/>
+                            <constraint firstItem="2xm-WZ-SGh" firstAttribute="top" secondItem="L3D-un-ZPq" secondAttribute="top" id="tEo-SN-ceC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="2xm-WZ-SGh" id="qGG-nD-xls"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2J-VV-90R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672" y="67"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

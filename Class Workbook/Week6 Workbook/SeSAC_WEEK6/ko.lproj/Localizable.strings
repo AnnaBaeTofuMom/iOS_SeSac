@@ -1,0 +1,20 @@
+/* 
+  LocalizableStrings.strings
+  SeSAC_WEEK6
+
+  Created by 배경원 on 2021/11/01.
+  
+*/
+
+"Home" = "홈";
+"Cancel" = "취소";
+"Save" = "저장";
+"Title" = "제목";
+"Please Select Date" = "날짜를 선택해 주세요";
+"Content" = "내용";
+"Date" = "날짜";
+"Calendar" = "달력";
+"Search" = "검색";
+"Setting" = "설정";
+"I Like Butt" = "난 궁둥이가 좋아!";
+
