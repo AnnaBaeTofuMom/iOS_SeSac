@@ -4,7 +4,7 @@
 
 
 
-## **가. 보. 자. 고** 👊
+## **가. 보. 자. 고 👊**
 
 <p align="center">
 <img src="https://w.namu.la/s/67e2fa7efdd131ddb2e35006b5ff52ccd6e36c8f82c7161722bcecbc7cc050c9a00f8ab92175f3966ca00dbfcda5b214fbf37752da4d9ddb0fc610d56cd836f6f2c074da1dad6347ac627c95c66f8f949792cd5107274768ca3b46ea4b49b6f6" width="300" >
@@ -13,6 +13,15 @@
 
 ## Rife Project (Personal Assignment) 
 
-[Project Timeline]()
+⏲️ [Project Timeline]()
 
-[Today I learned]()
+🪚 [Today I learned]()
+
+---
+
+# What did I learn so far?
+
+
+
+
+
