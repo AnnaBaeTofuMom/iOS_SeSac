@@ -15,7 +15,7 @@
 
 ⏲️ [Project Timeline / Resource](https://beforeanythingelse.notion.site/Project-Timeline-1a3cdfa636384573b1effaa7e8e11207)
 
-🖌️ [Design]()
+🖌️ [Design](https://beforeanythingelse.notion.site/Design-e394f9050f134569899d31c1dd89cc07)
 
 🪚 [Today I learned](https://beforeanythingelse.notion.site/Today-I-Learned-Personal-Project-7dd5bc4745014201b837847df4d53bd9)
 
