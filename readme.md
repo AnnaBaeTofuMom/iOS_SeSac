@@ -13,7 +13,9 @@
 
 ## Rife Project (Personal Assignment) 
 
-⏲️ [Project Timeline]()
+⏲️ [Project Timeline](https://beforeanythingelse.notion.site/Project-Timeline-1a3cdfa636384573b1effaa7e8e11207)
+
+🖌️ [Design]()
 
 🪚 [Today I learned]()
 
@@ -25,6 +27,7 @@
 
 👴 [App Lifecycle](https://beforeanythingelse.notion.site/Day-3-UIKit-View-397baab1612c4028abec6aedd5fe0c4c)
 
+🔰 [Github](https://beforeanythingelse.notion.site/Github-0aea63e2cede42f7a7f6e493c6990edd)
 
 
 
