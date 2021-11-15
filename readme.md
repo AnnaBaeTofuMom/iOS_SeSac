@@ -13,7 +13,7 @@
 
 ## Rife Project (Personal Assignment) 
 
-⏲️ [Project Timeline](https://beforeanythingelse.notion.site/Project-Timeline-1a3cdfa636384573b1effaa7e8e11207)
+⏲️ [Project Timeline / Resource](https://beforeanythingelse.notion.site/Project-Timeline-1a3cdfa636384573b1effaa7e8e11207)
 
 🖌️ [Design]()
 
