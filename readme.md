@@ -17,7 +17,7 @@
 
 🖌️ [Design]()
 
-🪚 [Today I learned]()
+🪚 [Today I learned](https://beforeanythingelse.notion.site/Today-I-Learned-Personal-Project-7dd5bc4745014201b837847df4d53bd9)
 
 ---
 
