@@ -34,10 +34,18 @@ class SideMenuViewController: UIViewController {
         sideMenuView.layer.borderColor = UIColor(named: "black")?.cgColor
         sideMenuView.layer.borderWidth = 1
         
-        myProfileButton.titleLabel?.attributedText = outline(string: "MY PROFILE", font: "NotoSansKR-Black", size: 25, outlineSize: 4, textColor: .white, outlineColor: .black)
-        recordsButton.titleLabel?.attributedText = outline(string: "RECORDS", font: "NotoSansKR-Black", size: 25, outlineSize: 4, textColor: .white, outlineColor: .black)
-        settingsButton.titleLabel?.attributedText = outline(string: "SETTINGS", font: "NotoSansKR-Black", size: 25, outlineSize: 4, textColor: .white, outlineColor: .black)
-        contactButton.titleLabel?.attributedText = outline(string: "CONTACT", font: "NotoSansKR-Black", size: 25, outlineSize: 4, textColor: .white, outlineColor: .black)
+        let profileNSAS = outline(string: "MY PROFILE", font: "NotoSansKR-Black", size: 25, outlineSize: 4, textColor: .white, outlineColor: .black)
+        let recordsNSAS = outline(string: "RECORDS", font: "NotoSansKR-Black", size: 25, outlineSize: 4, textColor: .white, outlineColor: .black)
+        let settingsNSAS = outline(string: "SETTINGS", font: "NotoSansKR-Black", size: 25, outlineSize: 4, textColor: .white, outlineColor: .black)
+        let contactNSAS = outline(string: "CONTACT", font: "NotoSansKR-Black", size: 25, outlineSize: 4, textColor: .white, outlineColor: .black)
+        
+        myProfileButton.setAttributedTitle(profileNSAS, for: .normal)
+        recordsButton.setAttributedTitle(recordsNSAS, for: .normal)
+        settingsButton.setAttributedTitle(settingsNSAS, for: .normal)
+        contactButton.setAttributedTitle(contactNSAS, for: .normal)
+        
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -52,5 +60,20 @@ class SideMenuViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func profileButtonClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let pv = storyboard.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
+        
+        present(pv, animated: true, completion: nil)
+    }
+    
+    @IBAction func recordButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func settingsButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func contactButtonClicked(_ sender: UIButton) {
+    }
 }
+

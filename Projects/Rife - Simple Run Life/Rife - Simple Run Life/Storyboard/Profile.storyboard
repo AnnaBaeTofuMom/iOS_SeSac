@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I0I-Mv-Vbl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -15,7 +15,7 @@
         <!--Profile View Controller-->
         <scene sceneID="AeB-d2-Dgt">
             <objects>
-                <viewController storyboardIdentifier="Map" id="Nxe-Mk-GKc" customClass="ProfileViewController" customModule="Rife___Simple_Run_Life" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" id="Nxe-Mk-GKc" customClass="ProfileViewController" customModule="Rife___Simple_Run_Life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vgg-O6-2zB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,6 +57,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="back"/>
+                                        <connections>
+                                            <action selector="backButtonClicked:" destination="Nxe-Mk-GKc" eventType="touchUpInside" id="x20-kA-YhC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4941176471" green="0.99215686270000003" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,13 +86,28 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3GS-Lf-naa"/>
-                    <connections>
-                        <outlet property="navigationBar" destination="qxc-Yy-6pP" id="fww-Lk-smr"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCd-Xu-V51" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730" y="17"/>
+            <point key="canvasLocation" x="2549.275362318841" y="16.741071428571427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3Yc-Q1-VyO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I0I-Mv-Vbl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Xt-7u-3pF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nxe-Mk-GKc" kind="relationship" relationship="rootViewController" id="rOv-g2-jdR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PM1-Dy-Tf7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639.1304347826087" y="16.741071428571427"/>
         </scene>
     </scenes>
     <resources>
