@@ -182,7 +182,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="profileButtonClicked:" destination="gvs-Ff-1ih" eventType="touchUpInside" id="qux-Z5-gDf"/>
-                                    <segue destination="frN-BN-COk" kind="show" identifier="showProfile" id="scT-V6-F4k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4p-KG-4vy">
@@ -263,16 +262,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ci4-AN-XF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5276.811594202899" y="83.705357142857139"/>
-        </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="Kwb-qc-tDj">
-            <objects>
-                <viewControllerPlaceholder id="frN-BN-COk" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="BP5-Gu-Z6r"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aat-Qh-p7r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5960.144927536232" y="-78.348214285714278"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="8zY-4O-asD">

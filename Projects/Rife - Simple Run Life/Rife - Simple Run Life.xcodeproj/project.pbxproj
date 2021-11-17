@@ -21,9 +21,14 @@
 		1A9BADC82744FA8200208546 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BADC72744FA8200208546 /* Settings.storyboard */; };
 		1A9BADCA2744FA8E00208546 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BADC92744FA8E00208546 /* Records.storyboard */; };
 		1A9BADCC2744FB0100208546 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BADCB2744FB0100208546 /* ProfileViewController.swift */; };
+		3A4431C32745653100C4A0E6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4431C22745653000C4A0E6 /* SettingsViewController.swift */; };
+		3A4431C52745697F00C4A0E6 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4431C42745697F00C4A0E6 /* Contact.storyboard */; };
+		3A4431C7274569C700C4A0E6 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4431C6274569C700C4A0E6 /* ContactViewController.swift */; };
+		3A4431C9274573ED00C4A0E6 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4431C8274573ED00C4A0E6 /* RecordsViewController.swift */; };
 		3A7A88E6274512FF00315084 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A7A88E5274512FF00315084 /* NotoSansKR-Black.otf */; };
 		3A7A88E82745130900315084 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A7A88E72745130900315084 /* NotoSansKR-Light.otf */; };
 		3A7A88EA274520B100315084 /* RunMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A88E9274520B100315084 /* RunMode.swift */; };
+		3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 3A7A88EC274543F600315084 /* TextFieldEffects */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,10 @@
 		1A9BADC72744FA8200208546 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		1A9BADC92744FA8E00208546 /* Records.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Records.storyboard; sourceTree = "<group>"; };
 		1A9BADCB2744FB0100208546 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Rife - Simple Run Life/Storyboard/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
+		3A4431C22745653000C4A0E6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3A4431C42745697F00C4A0E6 /* Contact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
+		3A4431C6274569C700C4A0E6 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		3A4431C8274573ED00C4A0E6 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		3A7A88E5274512FF00315084 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Black.otf"; path = "../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		3A7A88E72745130900315084 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		3A7A88E9274520B100315084 /* RunMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RunMode.swift; path = ViewController/RunMode.swift; sourceTree = "<group>"; };
@@ -51,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */,
 				1A9BADBE2744E90E00208546 /* SideMenu in Frameworks */,
 				1A9BADB32744D15D00208546 /* MarqueeLabel in Frameworks */,
 			);
@@ -99,6 +109,7 @@
 				1A9BADC52744FA7800208546 /* Profile.storyboard */,
 				1A9BADC72744FA8200208546 /* Settings.storyboard */,
 				1A9BADC92744FA8E00208546 /* Records.storyboard */,
+				3A4431C42745697F00C4A0E6 /* Contact.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -107,9 +118,12 @@
 			isa = PBXGroup;
 			children = (
 				1A9BADCB2744FB0100208546 /* ProfileViewController.swift */,
+				3A4431C22745653000C4A0E6 /* SettingsViewController.swift */,
 				1A9BADC32744EF6200208546 /* SideMenuViewController.swift */,
 				1A9BADBF2744EA4200208546 /* SideMenuNavigationController.swift */,
 				1A9BADB82744DF8000208546 /* MapViewController.swift */,
+				3A4431C6274569C700C4A0E6 /* ContactViewController.swift */,
+				3A4431C8274573ED00C4A0E6 /* RecordsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -133,6 +147,7 @@
 			packageProductDependencies = (
 				1A9BADB22744D15D00208546 /* MarqueeLabel */,
 				1A9BADBD2744E90E00208546 /* SideMenu */,
+				3A7A88EC274543F600315084 /* TextFieldEffects */,
 			);
 			productName = "Rife - Simple Run Life";
 			productReference = 1A9BAD9A2744CFD600208546 /* Rife - Simple Run Life.app */;
@@ -165,6 +180,7 @@
 			packageReferences = (
 				1A9BADB12744D15D00208546 /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
 				1A9BADBC2744E90E00208546 /* XCRemoteSwiftPackageReference "SideMenu" */,
+				3A7A88EB274543F600315084 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 			);
 			productRefGroup = 1A9BAD9B2744CFD600208546 /* Products */;
 			projectDirPath = "";
@@ -181,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7A88E6274512FF00315084 /* NotoSansKR-Black.otf in Resources */,
+				3A4431C52745697F00C4A0E6 /* Contact.storyboard in Resources */,
 				1A9BADC62744FA7800208546 /* Profile.storyboard in Resources */,
 				1A9BADAA2744CFD800208546 /* LaunchScreen.storyboard in Resources */,
 				1A9BADCA2744FA8E00208546 /* Records.storyboard in Resources */,
@@ -203,8 +220,11 @@
 				1A9BADA02744CFD600208546 /* SceneDelegate.swift in Sources */,
 				1A9BADB92744DF8000208546 /* MapViewController.swift in Sources */,
 				3A7A88EA274520B100315084 /* RunMode.swift in Sources */,
+				3A4431C7274569C700C4A0E6 /* ContactViewController.swift in Sources */,
 				1A9BADC42744EF6200208546 /* SideMenuViewController.swift in Sources */,
 				1A9BADC02744EA4300208546 /* SideMenuNavigationController.swift in Sources */,
+				3A4431C32745653100C4A0E6 /* SettingsViewController.swift in Sources */,
+				3A4431C9274573ED00C4A0E6 /* RecordsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +466,14 @@
 				minimumVersion = 6.5.0;
 			};
 		};
+		3A7A88EB274543F600315084 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -458,6 +486,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A9BADBC2744E90E00208546 /* XCRemoteSwiftPackageReference "SideMenu" */;
 			productName = SideMenu;
+		};
+		3A7A88EC274543F600315084 /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A7A88EB274543F600315084 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

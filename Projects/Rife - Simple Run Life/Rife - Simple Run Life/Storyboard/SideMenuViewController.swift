@@ -9,20 +9,7 @@ import UIKit
 
 class SideMenuViewController: UIViewController {
     
-    func outline(string:String, font:String, size:CGFloat, outlineSize:Float, textColor:UIColor, outlineColor:UIColor) -> NSMutableAttributedString {
-        return NSMutableAttributedString(string:string,
-                                         attributes: outlineAttributes(font: UIFont(name: font, size: size)!,
-                                                            outlineSize: outlineSize, textColor: textColor, outlineColor: outlineColor))
-    }
-
-    func outlineAttributes(font: UIFont, outlineSize: Float, textColor: UIColor, outlineColor: UIColor) -> [NSAttributedString.Key: Any]{
-        return [
-            NSAttributedString.Key.strokeColor : outlineColor,
-            NSAttributedString.Key.foregroundColor : textColor,
-            NSAttributedString.Key.strokeWidth : -outlineSize,
-            NSAttributedString.Key.font : font
-        ]
-    }
+    
 
     @IBOutlet var sideMenuView: UIView!
     @IBOutlet var myProfileButton: UIButton!
@@ -64,16 +51,43 @@ class SideMenuViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
         let pv = storyboard.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
         
-        present(pv, animated: true, completion: nil)
+//        pv.modalPresentationStyle = .fullScreen
+//        present(pv, animated: true, completion: nil)
+        self.navigationController?.pushViewController(pv, animated: true)
     }
     
     @IBAction func recordButtonClicked(_ sender: UIButton) {
     }
     
     @IBAction func settingsButtonClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        let sv = storyboard.instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
+        
+        self.navigationController?.pushViewController(sv, animated: true)
     }
     
     @IBAction func contactButtonClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Contact", bundle: nil)
+        let cv = storyboard.instantiateViewController(withIdentifier: "Contact") as! ContactViewController
+        
+        self.navigationController?.pushViewController(cv, animated: true)
+        
     }
 }
 
+extension SideMenuViewController {
+    func outline(string:String, font:String, size:CGFloat, outlineSize:Float, textColor:UIColor, outlineColor:UIColor) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string:string,
+                                         attributes: outlineAttributes(font: UIFont(name: font, size: size)!,
+                                                            outlineSize: outlineSize, textColor: textColor, outlineColor: outlineColor))
+    }
+
+    func outlineAttributes(font: UIFont, outlineSize: Float, textColor: UIColor, outlineColor: UIColor) -> [NSAttributedString.Key: Any]{
+        return [
+            NSAttributedString.Key.strokeColor : outlineColor,
+            NSAttributedString.Key.foregroundColor : textColor,
+            NSAttributedString.Key.strokeWidth : -outlineSize,
+            NSAttributedString.Key.font : font
+        ]
+    }
+}
