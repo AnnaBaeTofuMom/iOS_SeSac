@@ -13,6 +13,8 @@
 
 ## Rife Project (Personal Assignment) 
 
+❣️ [Introduction](https://www.notion.so/beforeanythingelse/RIFE-PROJECT-Introduction-58ca72a2354340b495ffda7793db33c5)
+
 ⏲️ [Project Timeline / Resource](https://beforeanythingelse.notion.site/Project-Timeline-1a3cdfa636384573b1effaa7e8e11207)
 
 🖌️ [Design](https://www.figma.com/file/KCnBgog7KWwLDON9irehCR/Rife-App-Design?node-id=0%3A1)
