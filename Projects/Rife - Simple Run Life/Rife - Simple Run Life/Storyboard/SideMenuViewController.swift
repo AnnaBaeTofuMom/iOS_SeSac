@@ -34,29 +34,23 @@ class SideMenuViewController: UIViewController {
         
         
         
-        // Do any additional setup after loading the view.
+       
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func profileButtonClicked(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
         let pv = storyboard.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
         
-//        pv.modalPresentationStyle = .fullScreen
-//        present(pv, animated: true, completion: nil)
         self.navigationController?.pushViewController(pv, animated: true)
     }
     
     @IBAction func recordButtonClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Records", bundle: nil)
+        let rv = storyboard.instantiateViewController(withIdentifier: "Records") as! RecordsViewController
+        
+        self.navigationController?.pushViewController(rv, animated: true)
     }
     
     @IBAction func settingsButtonClicked(_ sender: UIButton) {

@@ -9,6 +9,11 @@ import UIKit
 
 class RecordTableViewCell: UITableViewCell {
 
+    @IBOutlet var recordImageView: UIImageView!
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var distanceLabel: UILabel!
+    @IBOutlet var dateLabek: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

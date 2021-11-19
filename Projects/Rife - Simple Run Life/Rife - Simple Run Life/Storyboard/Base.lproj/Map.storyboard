@@ -300,7 +300,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WeA-0x-uo8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657.971014492754" y="83.705357142857139"/>
+            <point key="canvasLocation" x="2649" y="84"/>
         </scene>
     </scenes>
     <designables>

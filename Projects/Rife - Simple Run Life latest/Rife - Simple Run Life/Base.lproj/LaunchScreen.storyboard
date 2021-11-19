@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dS1-pT-zmw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="koM-Hx-psR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nb0-VF-5wt">
+                                <rect key="frame" x="0.0" y="47" width="414" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Frame 1" translatesAutoresizingMaskIntoConstraints="NO" id="Vbx-DR-yUS">
+                                        <rect key="frame" x="-2" y="-3" width="418" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VX5-dF-4U2"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F37-HO-AVL">
+                                <rect key="frame" x="90" y="294" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="0.0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Start" translatesAutoresizingMaskIntoConstraints="NO" id="Ykp-Yf-BqD">
+                                <rect key="frame" x="87" y="196" width="240" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="JJh-2v-yXD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RIFE-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ia6-ZB-Tqs">
+                                <rect key="frame" x="90" y="309" width="234" height="56.5"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.49411764705882355" green="0.99215686274509807" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dS1-pT-zmw" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="0aH-Vg-1Bq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ykp-Yf-BqD" secondAttribute="trailing" constant="87" id="BoP-UI-LWK"/>
+                            <constraint firstItem="Nb0-VF-5wt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MOF-Qz-6i7"/>
+                            <constraint firstItem="Ia6-ZB-Tqs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="NcA-CD-Fb8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ia6-ZB-Tqs" secondAttribute="trailing" constant="90" id="OPl-Vz-lge"/>
+                            <constraint firstAttribute="trailing" secondItem="dS1-pT-zmw" secondAttribute="trailing" id="VEi-CR-g5w"/>
+                            <constraint firstItem="dS1-pT-zmw" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="fZs-kX-7r8"/>
+                            <constraint firstItem="Ykp-Yf-BqD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="itl-AL-IKp"/>
+                            <constraint firstItem="Ykp-Yf-BqD" firstAttribute="top" secondItem="Nb0-VF-5wt" secondAttribute="bottom" constant="119" id="lQa-Bw-wxH"/>
+                            <constraint firstItem="Nb0-VF-5wt" firstAttribute="top" secondItem="dS1-pT-zmw" secondAttribute="bottom" id="sJg-7p-kGN"/>
+                            <constraint firstItem="Nb0-VF-5wt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tKZ-Wc-bHc"/>
+                            <constraint firstItem="Ia6-ZB-Tqs" firstAttribute="top" secondItem="Ykp-Yf-BqD" secondAttribute="bottom" constant="35" id="xnG-BT-Cv1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Frame 1" width="390" height="30"/>
+        <image name="RIFE-1" width="190.5" height="56.5"/>
+        <image name="Start" width="229" height="78"/>
+    </resources>
+</document>
