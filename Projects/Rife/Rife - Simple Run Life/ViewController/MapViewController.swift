@@ -133,6 +133,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         
         self.previousCoordinate = location.coordinate
+        print("Im still updating")
         
     }
     
@@ -152,11 +153,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         resultDistanceLabel.isHidden = true
         resultTimeLabel.isHidden = true
         
-        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.pausesLocationUpdatesAutomatically = false
         
         self.mapKit.mapType = MKMapType.standard
         self.mapKit.showsUserLocation = true
         self.mapKit.setUserTrackingMode(.follow, animated: true)
+        
         self.mapKit.delegate = self
         
         locationManager.delegate = self
@@ -193,7 +197,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             resultDistanceLabel.isHidden = true
             resultTimeLabel.isHidden = true
             self.startTime = Date()
-            print("just started", points)
             
         } else if runMode == .running {
             locationManager.stopUpdatingLocation()
@@ -222,8 +225,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             resultTimeLabel.text = stringRunTime
             
             
-            
-            print("Stopped", points)
+
         } else if runMode == .finished {
             // is when user tapped Save button
             self.mapKit.setUserTrackingMode(.follow, animated: true)

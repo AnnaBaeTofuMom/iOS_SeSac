@@ -3,10 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>러닝 거리 트래킹을 위해 위치 정보가 필요합니다.</string>
+	<string>When In Use Usage</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Always and When In Use Usage</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
 		<string>NotoSansKR-Black.otf</string>
 		<string>NotoSansKR-Light.otf</string>
 	</array>
@@ -29,5 +30,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 </dict>
 </plist>
