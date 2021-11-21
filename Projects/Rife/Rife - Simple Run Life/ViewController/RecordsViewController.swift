@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import MapKit
 
 let localRealm = try! Realm()
 let task = localRealm.objects(RecordObject.self)
@@ -43,8 +44,27 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 98
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return task.count
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let taskToDelete = task[indexPath.row]
+        if editingStyle == .delete {
+            try! localRealm.write {
+                localRealm.delete(taskToDelete)
+            }
+            tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,12 +77,18 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "YYYY년 MM월 dd일 HH:mm"
         let stringDate = dateformatter.string(from: date)
+        let distanceformatter = MKDistanceFormatter()
+        distanceformatter.units = .metric
+        let stringDistance = distanceformatter.string(fromDistance: task[indexPath.row].distance)
+        
         
         
         
         
         cell.mapImageView.image = image
         cell.dateLabel.text = stringDate
+        cell.distanceLabel.text = stringDistance
+        cell.timeLabel.text = task[indexPath.row].time
         
         return cell
     }

@@ -27,6 +27,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var runMode:RunMode = .ready
     var recordImage: UIImage = UIImage()
     let fileManager = FileManager()
+    var totalDistance: CLLocationDistance = CLLocationDistance()
+    var startTime: Date = Date()
+    var endTime: Date = Date()
+    var totalRunTime: String = ""
+    
     
     
     
@@ -68,7 +73,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     path.addLine(to: point)
                 }
                 path.lineWidth = 7
-                UIColor.blue.setStroke()
+                UIColor.red.setStroke()
                 path.stroke()
             }
             
@@ -106,6 +111,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             = CLLocationCoordinate2DMake(latitude, longtitude)
             self.points.append(point1)
             self.points.append(point2)
+            
+        let loc1 = CLLocation(latitude: self.previousCoordinate?.latitude ?? 0.0, longitude: self.previousCoordinate?.longitude ?? 0.0)
+        let loc2 = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        
+        let addedDistance = loc1.distance(from: loc2)
+        
+        self.totalDistance += addedDistance
+        
+        
+    
+            
             let lineDraw = MKPolyline(coordinates: points, count:points.count)
             self.mapKit.addOverlay(lineDraw)
     
@@ -163,8 +179,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func runButtonClicked(_ sender: UIButton) {
         if runMode == .ready {
             points = []
+            self.totalDistance = CLLocationDistance()
+            
             
             self.previousCoordinate = locationManager.location?.coordinate
+
             locationManager.startUpdatingLocation()
             self.points = []
             self.mapKit.showsUserLocation = true
@@ -173,6 +192,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             self.runMode = .running
             resultDistanceLabel.isHidden = true
             resultTimeLabel.isHidden = true
+            self.startTime = Date()
             print("just started", points)
             
         } else if runMode == .running {
@@ -182,23 +202,39 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             runButton.setImage(UIImage(named: "Save"), for: .normal)
             self.runMode = .finished
             resultDistanceLabel.isHidden = false
+            let distanceFormatter = MKDistanceFormatter()
+            distanceFormatter.units = .metric
+            let stringDistance = distanceFormatter.string(fromDistance: totalDistance)
+            resultDistanceLabel.text = stringDistance
             resultTimeLabel.isHidden = false
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm:ss"
             generateMapImage()
+            self.endTime = Date()
+            
+            
+            var runTime = self.endTime.timeIntervalSince(self.startTime)
+            let formatter = DateComponentsFormatter()
+            let stringRunTime = formatter.string(from: runTime)!
+            
+            self.totalRunTime = stringRunTime
+            
+            resultTimeLabel.text = stringRunTime
+            
+            
             
             print("Stopped", points)
         } else if runMode == .finished {
             // is when user tapped Save button
+            self.mapKit.setUserTrackingMode(.follow, animated: true)
             
             print(recordImage)
             
             let data: Data = recordImage.jpegData(compressionQuality: 0.8)!
-            let task = RecordObject(image: data)
+            let task = RecordObject(image: data, distance: self.totalDistance, time: self.totalRunTime)
             try! localRealm.write {
                 localRealm.add(task)
             }
-            
-            
-            
             let overlays = mapKit.overlays
             mapKit.removeOverlays(overlays)
             runButton.setImage(UIImage(named: "Start"), for: .normal)
@@ -206,6 +242,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             resultDistanceLabel.isHidden = true
             resultTimeLabel.isHidden = true
             self.mapKit.showsUserLocation = true
+            
+            
             
             
             

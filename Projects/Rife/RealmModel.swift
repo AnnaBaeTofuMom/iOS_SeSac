@@ -7,15 +7,18 @@
 import RealmSwift
 import Darwin
 import Foundation
+import CoreLocation
 
 class RecordObject: Object {
     @Persisted var date: Date
-    @Persisted var distance: String = ""
+    @Persisted var distance: CLLocationDistance
     @Persisted var time = ""
     @Persisted var image: Data
-    convenience init(image: Data) {
+    convenience init(image: Data, distance: CLLocationDistance, time: String) {
         self.init()
         self.date = Date()
         self.image = image
+        self.distance = distance
+        self.time = time
     }
 }
