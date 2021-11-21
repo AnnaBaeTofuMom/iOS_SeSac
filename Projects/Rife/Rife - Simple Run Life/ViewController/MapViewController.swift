@@ -11,21 +11,72 @@ import MarqueeLabel
 import XCTest
 import MapKit
 import CoreLocation
+import CloudKit
 import RealmSwift
 
+
 class MapViewController: UIViewController, CLLocationManagerDelegate {
+    
+    let localRealm = try! Realm()
     
     var currentOverlay: MKPolyline = MKPolyline()
     let locationManager: CLLocationManager = CLLocationManager()
     var previousCoordinate: CLLocationCoordinate2D?
+    var points: [CLLocationCoordinate2D] = []
     
     var runMode:RunMode = .ready
+    var recordImage: UIImage = UIImage()
+    let fileManager = FileManager()
     
+    
+    
+    
+    @IBOutlet var recordView: UIImageView!
     @IBOutlet var mapKit: MKMapView!
     @IBOutlet var resultDistanceLabel: UILabel!
     @IBOutlet var resultTimeLabel: UILabel!
     @IBOutlet var runButton: UIButton!
     @IBOutlet var navigationBar: UIView!
+    
+    
+    
+    
+    func generateMapImage() {
+        let options = MKMapSnapshotter.Options()
+        options.region = MKCoordinateRegion(coordinates: self.points)!
+        options.size = CGSize(width: 100, height: 100)
+        options.showsBuildings = true
+        
+        MKMapSnapshotter(options: options).start { snapshot, error in
+            guard let snapshot = snapshot else { return }
+            
+            let mapImage = snapshot.image
+            
+            let finalImage = UIGraphicsImageRenderer(size: mapImage.size).image { _ in
+                mapImage.draw(at: .zero)
+                
+               let coordinates = self.points
+                
+                let points2 = coordinates.map { coordinate in
+                    snapshot.point(for: coordinate)
+                }
+                
+                let path = UIBezierPath()
+                path.move(to: points2[0])
+                
+                for point in points2.dropFirst() {
+                    path.addLine(to: point)
+                }
+                path.lineWidth = 7
+                UIColor.blue.setStroke()
+                path.stroke()
+            }
+            
+            self.recordImage = finalImage
+        }
+        
+    }
+    
     
     func outline(string:String, font:String, size:CGFloat, outlineSize:Float, textColor:UIColor, outlineColor:UIColor) -> NSMutableAttributedString {
         return NSMutableAttributedString(string:string,
@@ -49,21 +100,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             let latitude = location.coordinate.latitude
             let longtitude = location.coordinate.longitude
         
-        if let previousCoordinate = self.previousCoordinate {
-            var points: [CLLocationCoordinate2D] = []
-            let point1 = CLLocationCoordinate2DMake(previousCoordinate.latitude, previousCoordinate.longitude)
+       
+        let point1 = CLLocationCoordinate2DMake(self.previousCoordinate?.latitude ?? location.coordinate.latitude, self.previousCoordinate?.longitude ?? location.coordinate.longitude)
             let point2: CLLocationCoordinate2D
             = CLLocationCoordinate2DMake(latitude, longtitude)
-            points.append(point1)
-            points.append(point2)
+            self.points.append(point1)
+            self.points.append(point2)
             let lineDraw = MKPolyline(coordinates: points, count:points.count)
             self.mapKit.addOverlay(lineDraw)
+    
         
        
         
 
            
-        }
+        
         
         self.previousCoordinate = location.coordinate
         
@@ -72,6 +123,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
         
@@ -110,13 +162,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func runButtonClicked(_ sender: UIButton) {
         if runMode == .ready {
+            points = []
+            
+            self.previousCoordinate = locationManager.location?.coordinate
             locationManager.startUpdatingLocation()
+            self.points = []
             self.mapKit.showsUserLocation = true
             self.mapKit.setUserTrackingMode(.follow, animated: true)
             runButton.setImage(UIImage(named: "Stop"), for: .normal)
             self.runMode = .running
             resultDistanceLabel.isHidden = true
             resultTimeLabel.isHidden = true
+            print("just started", points)
+            
         } else if runMode == .running {
             locationManager.stopUpdatingLocation()
             self.mapKit.showsUserLocation = false
@@ -125,13 +183,33 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             self.runMode = .finished
             resultDistanceLabel.isHidden = false
             resultTimeLabel.isHidden = false
+            generateMapImage()
+            
+            print("Stopped", points)
         } else if runMode == .finished {
+            // is when user tapped Save button
+            
+            print(recordImage)
+            
+            let data: Data = recordImage.jpegData(compressionQuality: 0.8)!
+            let task = RecordObject(image: data)
+            try! localRealm.write {
+                localRealm.add(task)
+            }
+            
+            
+            
             let overlays = mapKit.overlays
             mapKit.removeOverlays(overlays)
             runButton.setImage(UIImage(named: "Start"), for: .normal)
             self.runMode = .ready
             resultDistanceLabel.isHidden = true
             resultTimeLabel.isHidden = true
+            self.mapKit.showsUserLocation = true
+            
+            
+            
+            
         } else {
             
         }

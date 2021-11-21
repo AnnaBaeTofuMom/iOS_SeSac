@@ -21,18 +21,19 @@
 		1A9BADC82744FA8200208546 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BADC72744FA8200208546 /* Settings.storyboard */; };
 		1A9BADCA2744FA8E00208546 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BADC92744FA8E00208546 /* Records.storyboard */; };
 		1A9BADCC2744FB0100208546 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BADCB2744FB0100208546 /* ProfileViewController.swift */; };
-		1A9BADCF27477B7B00208546 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BADCE27477B7B00208546 /* NotoSansKR-Light.otf */; };
-		1A9BADD127477B8500208546 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BADD027477B8500208546 /* NotoSansKR-Black.otf */; };
 		1A9BADD327477C0800208546 /* RecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BADD227477C0800208546 /* RecordsTableViewCell.swift */; };
-		1A9BADD62747806400208546 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1A9BADD52747806400208546 /* Realm */; };
-		1A9BADD82747806400208546 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A9BADD72747806400208546 /* RealmSwift */; };
-		1A9BADDA2747833300208546 /* maptestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BADD92747833300208546 /* maptestViewController.swift */; };
 		3A4431C32745653100C4A0E6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4431C22745653000C4A0E6 /* SettingsViewController.swift */; };
 		3A4431C52745697F00C4A0E6 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4431C42745697F00C4A0E6 /* Contact.storyboard */; };
 		3A4431C7274569C700C4A0E6 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4431C6274569C700C4A0E6 /* ContactViewController.swift */; };
 		3A4431C9274573ED00C4A0E6 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4431C8274573ED00C4A0E6 /* RecordsViewController.swift */; };
 		3A7A88EA274520B100315084 /* RunMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A88E9274520B100315084 /* RunMode.swift */; };
 		3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 3A7A88EC274543F600315084 /* TextFieldEffects */; };
+		3AC0870327481ED3006065FA /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3AC0870227481ED3006065FA /* NotoSansKR-Black.otf */; };
+		3AC0870527481EDB006065FA /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3AC0870427481EDB006065FA /* NotoSansKR-Light.otf */; };
+		3AC08707274A4BA2006065FA /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC08706274A4BA2006065FA /* MapKitExtensions.swift */; };
+		3AC0870C274A6836006065FA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC0870B274A6836006065FA /* Realm */; };
+		3AC0870E274A6839006065FA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC0870D274A6839006065FA /* RealmSwift */; };
+		3AC08710274A68B3006065FA /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0870F274A68B3006065FA /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,15 +51,16 @@
 		1A9BADC72744FA8200208546 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		1A9BADC92744FA8E00208546 /* Records.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Records.storyboard; sourceTree = "<group>"; };
 		1A9BADCB2744FB0100208546 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Rife - Simple Run Life/Storyboard/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
-		1A9BADCE27477B7B00208546 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../../Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
-		1A9BADD027477B8500208546 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Black.otf"; path = "../../../../../Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		1A9BADD227477C0800208546 /* RecordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordsTableViewCell.swift; path = "Rife - Simple Run Life/Storyboard/RecordsTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
-		1A9BADD92747833300208546 /* maptestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = maptestViewController.swift; path = "Rife - Simple Run Life/Storyboard/maptestViewController.swift"; sourceTree = SOURCE_ROOT; };
 		3A4431C22745653000C4A0E6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3A4431C42745697F00C4A0E6 /* Contact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
 		3A4431C6274569C700C4A0E6 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		3A4431C8274573ED00C4A0E6 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		3A7A88E9274520B100315084 /* RunMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RunMode.swift; path = ViewController/RunMode.swift; sourceTree = "<group>"; };
+		3AC0870227481ED3006065FA /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Black.otf"; path = "../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		3AC0870427481EDB006065FA /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		3AC08706274A4BA2006065FA /* MapKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapKitExtensions.swift; path = ViewController/MapKitExtensions.swift; sourceTree = "<group>"; };
+		3AC0870F274A68B3006065FA /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +70,8 @@
 			files = (
 				3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */,
 				1A9BADBE2744E90E00208546 /* SideMenu in Frameworks */,
-				1A9BADD62747806400208546 /* Realm in Frameworks */,
-				1A9BADD82747806400208546 /* RealmSwift in Frameworks */,
+				3AC0870C274A6836006065FA /* Realm in Frameworks */,
+				3AC0870E274A6839006065FA /* RealmSwift in Frameworks */,
 				1A9BADB32744D15D00208546 /* MarqueeLabel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +84,7 @@
 			children = (
 				1A9BAD9C2744CFD600208546 /* Rife - Simple Run Life */,
 				1A9BAD9B2744CFD600208546 /* Products */,
+				3AC0870A274A6836006065FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,8 +99,10 @@
 		1A9BAD9C2744CFD600208546 /* Rife - Simple Run Life */ = {
 			isa = PBXGroup;
 			children = (
-				1A9BADCD27477B5700208546 /* font */,
+				3AC0870F274A68B3006065FA /* RealmModel.swift */,
+				3AC08706274A4BA2006065FA /* MapKitExtensions.swift */,
 				3A7A88E9274520B100315084 /* RunMode.swift */,
+				1A9BADCD27477B5700208546 /* font */,
 				1A9BADBB2744DF9400208546 /* ViewController */,
 				1A9BADBA2744DF8600208546 /* Storyboard */,
 				1A9BAD9D2744CFD600208546 /* AppDelegate.swift */,
@@ -124,7 +129,6 @@
 		1A9BADBB2744DF9400208546 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1A9BADD92747833300208546 /* maptestViewController.swift */,
 				1A9BADD227477C0800208546 /* RecordsTableViewCell.swift */,
 				1A9BADCB2744FB0100208546 /* ProfileViewController.swift */,
 				3A4431C22745653000C4A0E6 /* SettingsViewController.swift */,
@@ -140,10 +144,17 @@
 		1A9BADCD27477B5700208546 /* font */ = {
 			isa = PBXGroup;
 			children = (
-				1A9BADCE27477B7B00208546 /* NotoSansKR-Light.otf */,
-				1A9BADD027477B8500208546 /* NotoSansKR-Black.otf */,
+				3AC0870427481EDB006065FA /* NotoSansKR-Light.otf */,
+				3AC0870227481ED3006065FA /* NotoSansKR-Black.otf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		3AC0870A274A6836006065FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +177,8 @@
 				1A9BADB22744D15D00208546 /* MarqueeLabel */,
 				1A9BADBD2744E90E00208546 /* SideMenu */,
 				3A7A88EC274543F600315084 /* TextFieldEffects */,
-				1A9BADD52747806400208546 /* Realm */,
-				1A9BADD72747806400208546 /* RealmSwift */,
+				3AC0870B274A6836006065FA /* Realm */,
+				3AC0870D274A6839006065FA /* RealmSwift */,
 			);
 			productName = "Rife - Simple Run Life";
 			productReference = 1A9BAD9A2744CFD600208546 /* Rife - Simple Run Life.app */;
@@ -217,15 +228,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A9BADD127477B8500208546 /* NotoSansKR-Black.otf in Resources */,
 				3A4431C52745697F00C4A0E6 /* Contact.storyboard in Resources */,
 				1A9BADC62744FA7800208546 /* Profile.storyboard in Resources */,
-				1A9BADCF27477B7B00208546 /* NotoSansKR-Light.otf in Resources */,
 				1A9BADAA2744CFD800208546 /* LaunchScreen.storyboard in Resources */,
 				1A9BADCA2744FA8E00208546 /* Records.storyboard in Resources */,
 				1A9BADA72744CFD800208546 /* Assets.xcassets in Resources */,
 				1A9BADA52744CFD600208546 /* Map.storyboard in Resources */,
+				3AC0870527481EDB006065FA /* NotoSansKR-Light.otf in Resources */,
 				1A9BADC82744FA8200208546 /* Settings.storyboard in Resources */,
+				3AC0870327481ED3006065FA /* NotoSansKR-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +250,6 @@
 				1A9BADCC2744FB0100208546 /* ProfileViewController.swift in Sources */,
 				1A9BAD9E2744CFD600208546 /* AppDelegate.swift in Sources */,
 				1A9BADA02744CFD600208546 /* SceneDelegate.swift in Sources */,
-				1A9BADDA2747833300208546 /* maptestViewController.swift in Sources */,
 				1A9BADB92744DF8000208546 /* MapViewController.swift in Sources */,
 				3A7A88EA274520B100315084 /* RunMode.swift in Sources */,
 				3A4431C7274569C700C4A0E6 /* ContactViewController.swift in Sources */,
@@ -248,6 +258,8 @@
 				3A4431C32745653100C4A0E6 /* SettingsViewController.swift in Sources */,
 				3A4431C9274573ED00C4A0E6 /* RecordsViewController.swift in Sources */,
 				1A9BADD327477C0800208546 /* RecordsTableViewCell.swift in Sources */,
+				3AC08710274A68B3006065FA /* RealmModel.swift in Sources */,
+				3AC08707274A4BA2006065FA /* MapKitExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,20 +530,20 @@
 			package = 1A9BADBC2744E90E00208546 /* XCRemoteSwiftPackageReference "SideMenu" */;
 			productName = SideMenu;
 		};
-		1A9BADD52747806400208546 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1A9BADD42747806400208546 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		1A9BADD72747806400208546 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1A9BADD42747806400208546 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
 		3A7A88EC274543F600315084 /* TextFieldEffects */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3A7A88EB274543F600315084 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
 			productName = TextFieldEffects;
+		};
+		3AC0870B274A6836006065FA /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A9BADD42747806400208546 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		3AC0870D274A6839006065FA /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A9BADD42747806400208546 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

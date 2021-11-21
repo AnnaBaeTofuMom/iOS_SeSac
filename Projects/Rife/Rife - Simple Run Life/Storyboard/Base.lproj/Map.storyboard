@@ -55,7 +55,7 @@
                                     <constraint firstAttribute="trailing" secondItem="jx9-N1-WjG" secondAttribute="trailing" id="qeN-wU-BAu"/>
                                 </constraints>
                             </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ahx-Ia-D7L">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahx-Ia-D7L">
                                 <rect key="frame" x="0.0" y="141" width="414" height="755"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qch-qh-flL">

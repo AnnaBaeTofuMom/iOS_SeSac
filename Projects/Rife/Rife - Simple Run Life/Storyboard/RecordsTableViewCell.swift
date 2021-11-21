@@ -14,6 +14,10 @@ class RecordsTableViewCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var distanceLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
+    
+    
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,6 +28,11 @@ class RecordsTableViewCell: UITableViewCell {
         dateLabel.text = "2021.Oct.16"
         distanceLabel.text = "11.25km"
         timeLabel.text = "1:00:25"
+        let storyboard = UIStoryboard(name: "Map", bundle: nil)
+        let mv = storyboard.instantiateViewController(withIdentifier: "Map") as! MapViewController
+        
+        mapImageView.image = mv.recordImage
+        
         
         mapImageView.backgroundColor = .black
         cellView.backgroundColor = UIColor(red: 0.9882, green: 0.8667, blue: 0.9255, alpha: 1.0)

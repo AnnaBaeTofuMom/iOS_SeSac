@@ -10,6 +10,7 @@ import UIKit
 class SideMenuViewController: UIViewController {
     
     
+    
 
     @IBOutlet var sideMenuView: UIView!
     @IBOutlet var myProfileButton: UIButton!
@@ -59,6 +60,7 @@ class SideMenuViewController: UIViewController {
     @IBAction func recordButtonClicked(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Records", bundle: nil)
         let rv = storyboard.instantiateViewController(withIdentifier: "Records") as! RecordsViewController
+
         
         self.navigationController?.pushViewController(rv, animated: true)
     }
