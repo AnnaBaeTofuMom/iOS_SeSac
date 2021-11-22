@@ -32,6 +32,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var endTime: Date = Date()
     var totalRunTime: String = ""
     
+    var timer = Timer()
+    var (hours, minutes, seconds, fractions) = (0, 0, 0, 0)
+    
     
     
     
@@ -114,10 +117,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
         let loc1 = CLLocation(latitude: self.previousCoordinate?.latitude ?? 0.0, longitude: self.previousCoordinate?.longitude ?? 0.0)
         let loc2 = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        
+        let distanceFormatter = MKDistanceFormatter()
+        distanceFormatter.units = .metric
         let addedDistance = loc1.distance(from: loc2)
         
+        
         self.totalDistance += addedDistance
+        
+        let stringDistance = distanceFormatter.string(fromDistance: totalDistance)
+        self.resultDistanceLabel.text = "\(stringDistance)"
+
         
         
     
@@ -180,8 +189,36 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         print("sidemenu opened")
     }
     
+    
+    @objc func keepTimer() {
+        fractions += 1
+        if fractions > 99 {
+            seconds += 1
+            fractions = 0
+        }
+        
+        if seconds == 60 {
+            minutes += 1
+            seconds = 0
+        }
+        
+        if minutes == 60 {
+            hours += 1
+            minutes = 0
+        }
+        let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
+        let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
+        let hoursString = hours > 9 ? "\(hours)" : "0\(hours)"
+        
+        totalRunTime = "\(hoursString):\(minutesString):\(secondsString)"
+        resultTimeLabel.text = self.totalRunTime
+        
+    }
+    
     @IBAction func runButtonClicked(_ sender: UIButton) {
         if runMode == .ready {
+            resultTimeLabel.text = self.totalRunTime
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
             points = []
             self.totalDistance = CLLocationDistance()
             
@@ -194,9 +231,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             self.mapKit.setUserTrackingMode(.follow, animated: true)
             runButton.setImage(UIImage(named: "Stop"), for: .normal)
             self.runMode = .running
-            resultDistanceLabel.isHidden = true
-            resultTimeLabel.isHidden = true
-            self.startTime = Date()
+            resultDistanceLabel.isHidden = false
+            resultTimeLabel.isHidden = false
+            
             
         } else if runMode == .running {
             locationManager.stopUpdatingLocation()
@@ -210,23 +247,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             let stringDistance = distanceFormatter.string(fromDistance: totalDistance)
             resultDistanceLabel.text = stringDistance
             resultTimeLabel.isHidden = false
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm:ss"
             generateMapImage()
-            self.endTime = Date()
+            timer.invalidate()
             
             
-            var runTime = self.endTime.timeIntervalSince(self.startTime)
-            let formatter = DateComponentsFormatter()
-            let stringRunTime = formatter.string(from: runTime)!
             
-            self.totalRunTime = stringRunTime
-            
-            resultTimeLabel.text = stringRunTime
+            resultTimeLabel.text = self.totalRunTime
             
             
 
         } else if runMode == .finished {
+            timer.invalidate()
+            (hours, minutes, seconds, fractions) = (0, 0, 0, 0)
+            resultTimeLabel.text = totalRunTime
             // is when user tapped Save button
             self.mapKit.setUserTrackingMode(.follow, animated: true)
             
