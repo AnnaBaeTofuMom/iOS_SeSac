@@ -93,6 +93,13 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rdv = self.storyboard?.instantiateViewController(withIdentifier: "RecordDetail") as! RecordDetailViewController
+        rdv.recordData = task[indexPath.row]
+        
+        self.navigationController?.pushViewController(rdv, animated: true)
+    }
+    
     
 }
 

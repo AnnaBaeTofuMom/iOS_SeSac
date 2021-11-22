@@ -36,7 +36,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var (hours, minutes, seconds, fractions) = (0, 0, 0, 0)
     
     
-    
+    func getLocationUsagePermission() {
+            //location4
+            self.locationManager.requestAlwaysAuthorization()
+
+        }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+            //location5
+        switch status {
+        case .authorizedAlways:
+                print("GPS 권한 설정됨")
+        case .restricted, .notDetermined, .authorizedWhenInUse:
+                print("GPS 권한 설정되지 않음")
+            self.locationManager.requestAlwaysAuthorization()
+        case .denied:
+                print("GPS 권한 요청 거부됨")
+            self.locationManager.requestAlwaysAuthorization()
+        default:
+                print("GPS: Default")
+        }
+    }
     
     
     @IBOutlet var recordView: UIImageView!
@@ -47,12 +67,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var navigationBar: UIView!
     
     
+       
     
     
     func generateMapImage() {
         let options = MKMapSnapshotter.Options()
         options.region = MKCoordinateRegion(coordinates: self.points)!
-        options.size = CGSize(width: 100, height: 100)
+        options.size = CGSize(width: 240, height: 240)
         options.showsBuildings = true
         
         MKMapSnapshotter(options: options).start { snapshot, error in
@@ -100,6 +121,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             NSAttributedString.Key.font : font
         ]
     }
+    
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
@@ -149,6 +172,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.pausesLocationUpdatesAutomatically = false
+        
+        self.mapKit.mapType = MKMapType.standard
+        self.mapKit.showsUserLocation = true
+        self.mapKit.setUserTrackingMode(.follow, animated: true)
+        
+        self.mapKit.delegate = self
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         
         
@@ -162,18 +197,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         resultDistanceLabel.isHidden = true
         resultTimeLabel.isHidden = true
         
-        locationManager.requestAlwaysAuthorization()
-        locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.pausesLocationUpdatesAutomatically = false
         
-        self.mapKit.mapType = MKMapType.standard
-        self.mapKit.showsUserLocation = true
-        self.mapKit.setUserTrackingMode(.follow, animated: true)
-        
-        self.mapKit.delegate = self
-        
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         //locationManager.startUpdatingLocation()
         
         
@@ -265,7 +289,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
             print(recordImage)
             
-            let data: Data = recordImage.jpegData(compressionQuality: 0.8)!
+            let data: Data = recordImage.jpegData(compressionQuality: 0.1)!
             let task = RecordObject(image: data, distance: self.totalDistance, time: self.totalRunTime)
             try! localRealm.write {
                 localRealm.add(task)
@@ -306,3 +330,4 @@ extension MapViewController: MKMapViewDelegate {
         return renderer
     }
 }
+

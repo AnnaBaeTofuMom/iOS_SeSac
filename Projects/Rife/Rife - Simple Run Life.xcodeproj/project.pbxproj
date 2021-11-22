@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A2DD6AB274B725E00D9EE56 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2DD6AA274B725E00D9EE56 /* NotoSansKR-Black.otf */; };
+		1A2DD6AD274B8AB600D9EE56 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DD6AC274B8AB600D9EE56 /* RecordDetailViewController.swift */; };
 		1A9BAD9E2744CFD600208546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BAD9D2744CFD600208546 /* AppDelegate.swift */; };
 		1A9BADA02744CFD600208546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BAD9F2744CFD600208546 /* SceneDelegate.swift */; };
 		1A9BADA52744CFD600208546 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BADA32744CFD600208546 /* Map.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		1A2DD6AA274B725E00D9EE56 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Black.otf"; path = "../../../../../Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		1A2DD6AC274B8AB600D9EE56 /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordDetailViewController.swift; path = "Rife - Simple Run Life/Storyboard/RecordDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 		1A9BAD9A2744CFD600208546 /* Rife - Simple Run Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rife - Simple Run Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9BAD9D2744CFD600208546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A9BAD9F2744CFD600208546 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		1A9BADBB2744DF9400208546 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1A2DD6AC274B8AB600D9EE56 /* RecordDetailViewController.swift */,
 				1A9BADD227477C0800208546 /* RecordsTableViewCell.swift */,
 				1A9BADCB2744FB0100208546 /* ProfileViewController.swift */,
 				3A4431C22745653000C4A0E6 /* SettingsViewController.swift */,
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2DD6AD274B8AB600D9EE56 /* RecordDetailViewController.swift in Sources */,
 				1A9BADCC2744FB0100208546 /* ProfileViewController.swift in Sources */,
 				1A9BAD9E2744CFD600208546 /* AppDelegate.swift in Sources */,
 				1A9BADA02744CFD600208546 /* SceneDelegate.swift in Sources */,
