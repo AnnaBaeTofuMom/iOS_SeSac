@@ -240,7 +240,7 @@
                                             <constraint firstAttribute="height" constant="36" id="ufo-hc-I7M"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Save-Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="save button"/>
                                         <connections>
                                             <action selector="saveButtonClicked:" destination="kUN-Wf-mid" eventType="touchUpInside" id="z0B-EL-yQC"/>
                                         </connections>
@@ -355,8 +355,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Save-Button" width="36" height="36"/>
         <image name="back" width="36" height="36"/>
+        <image name="save button" width="36" height="36"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
