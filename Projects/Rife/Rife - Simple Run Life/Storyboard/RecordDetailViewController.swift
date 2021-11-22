@@ -7,26 +7,41 @@
 
 import UIKit
 import MapKit
+import NotificationBannerSwift
 
 class RecordDetailViewController: UIViewController {
         
     @IBOutlet var distanceLabel: UILabel!
     var recordData: RecordObject!
     
+    @IBOutlet var memoLabel: UILabel!
     @IBOutlet var memoTextView: UITextView!
     @IBOutlet var mapImageView: UIImageView!
     @IBOutlet var timeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mapImageView.layer.cornerRadius = 5
+        mapImageView.layer.borderColor = UIColor(hue: 0.4, saturation: 0.5, brightness: 0.99, alpha: 1.0).cgColor
+        mapImageView.layer.borderWidth = 1
+        
         let distanceformatter = MKDistanceFormatter()
         distanceformatter.units = .metric
         let stringDistance = distanceformatter.string(fromDistance: recordData.distance)
         
-        distanceLabel.text = "\(stringDistance)"
-        timeLabel.text = "\(recordData.time)"
-        memoTextView.text = ""
+        let distanceNSAS = outline(string: "\(stringDistance)", font: "NotoSansKR-Black", size: 35, outlineSize: 3, textColor: UIColor(hue: 0.4, saturation: 0.5, brightness: 0.99, alpha: 1.0), outlineColor: .black)
+        let timeNSAS = outline(string: "\(recordData.time)", font: "NotoSansKR-Black", size: 35, outlineSize: 3, textColor: UIColor(hue: 0.4, saturation: 0.5, brightness: 0.99, alpha: 1.0), outlineColor: .black)
+        
+        let memoNSAS = outline(string: "Memo", font: "NotoSansKR-Black", size: 22, outlineSize: 1, textColor: UIColor(hue: 0.4, saturation: 0.5, brightness: 0.99, alpha: 1.0), outlineColor: .clear)
+        
+        distanceLabel.attributedText = distanceNSAS
+        timeLabel.attributedText = timeNSAS
+        memoTextView.text = recordData.memo
         mapImageView.image = UIImage(data: recordData.image)
+        memoLabel.attributedText = memoNSAS
+        memoTextView.layer.cornerRadius = 5
+        memoTextView.layer.borderWidth = 1
+        memoTextView.layer.borderColor = UIColor(hue: 0.4, saturation: 0.5, brightness: 0.99, alpha: 1.0).cgColor
         
         
         
@@ -41,5 +56,14 @@ class RecordDetailViewController: UIViewController {
   
     @IBAction func backButtonClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func saveButtonClicked(_ sender: UIButton) {
+        let taskToUpdate = recordData
+        try! localRealm.write {
+            taskToUpdate?.memo = memoTextView.text
+        }
+        let banner = NotificationBanner(title: "Well Saved!", subtitle: "Your memo is succesfully saved.", style: .success)
+        banner.show()
     }
 }

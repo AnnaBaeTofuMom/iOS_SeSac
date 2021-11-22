@@ -14,11 +14,15 @@ class RecordObject: Object {
     @Persisted var distance: CLLocationDistance
     @Persisted var time = ""
     @Persisted var image: Data
+    @Persisted var memo: String
+    
     convenience init(image: Data, distance: CLLocationDistance, time: String) {
         self.init()
         self.date = Date()
         self.image = image
         self.distance = distance
         self.time = time
+        self.memo = ""
     }
 }
+

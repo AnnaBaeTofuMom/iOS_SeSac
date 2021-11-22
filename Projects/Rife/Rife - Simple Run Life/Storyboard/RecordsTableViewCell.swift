@@ -25,13 +25,14 @@ class RecordsTableViewCell: UITableViewCell {
         distanceLabel.font = UIFont(name: "NotoSansKR-Black", size: 17)
         timeLabel.font = UIFont(name: "NotoSansKR-Black", size: 17)
         
-        dateLabel.text = "2021.Oct.16"
-        distanceLabel.text = "11.25km"
-        timeLabel.text = "1:00:25"
+
         let storyboard = UIStoryboard(name: "Map", bundle: nil)
         let mv = storyboard.instantiateViewController(withIdentifier: "Map") as! MapViewController
         
         mapImageView.image = mv.recordImage
+        mapImageView.layer.cornerRadius = mapImageView.frame.width * 0.05
+        mapImageView.layer.borderWidth = 1
+        mapImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
         
         
         mapImageView.backgroundColor = .black

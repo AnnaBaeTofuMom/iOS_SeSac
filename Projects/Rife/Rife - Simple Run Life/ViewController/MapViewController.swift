@@ -28,35 +28,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var recordImage: UIImage = UIImage()
     let fileManager = FileManager()
     var totalDistance: CLLocationDistance = CLLocationDistance()
-    var startTime: Date = Date()
-    var endTime: Date = Date()
     var totalRunTime: String = ""
     
     var timer = Timer()
     var (hours, minutes, seconds, fractions) = (0, 0, 0, 0)
     
-    
-    func getLocationUsagePermission() {
-            //location4
-            self.locationManager.requestAlwaysAuthorization()
-
-        }
-
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-            //location5
-        switch status {
-        case .authorizedAlways:
-                print("GPS 권한 설정됨")
-        case .restricted, .notDetermined, .authorizedWhenInUse:
-                print("GPS 권한 설정되지 않음")
-            self.locationManager.requestAlwaysAuthorization()
-        case .denied:
-                print("GPS 권한 요청 거부됨")
-            self.locationManager.requestAlwaysAuthorization()
-        default:
-                print("GPS: Default")
-        }
-    }
     
     
     @IBOutlet var recordView: UIImageView!
@@ -97,7 +73,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     path.addLine(to: point)
                 }
                 path.lineWidth = 7
-                UIColor.red.setStroke()
+                UIColor(hue: 0.6694, saturation: 1, brightness: 0.91, alpha: 1.0).setStroke()
                 path.stroke()
             }
             
@@ -107,21 +83,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func outline(string:String, font:String, size:CGFloat, outlineSize:Float, textColor:UIColor, outlineColor:UIColor) -> NSMutableAttributedString {
-        return NSMutableAttributedString(string:string,
-                                         attributes: outlineAttributes(font: UIFont(name: font, size: size)!,
-                                                            outlineSize: outlineSize, textColor: textColor, outlineColor: outlineColor))
-    }
-
-    func outlineAttributes(font: UIFont, outlineSize: Float, textColor: UIColor, outlineColor: UIColor) -> [NSAttributedString.Key: Any]{
-        return [
-            NSAttributedString.Key.strokeColor : outlineColor,
-            NSAttributedString.Key.foregroundColor : textColor,
-            NSAttributedString.Key.strokeWidth : -outlineSize,
-            NSAttributedString.Key.font : font
-        ]
-    }
-    
+ 
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -204,13 +166,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("mapView appear")
     }
     
 
 
     @IBAction func sideBarButtonClicked(_ sender: UIButton) {
-        print("sidemenu opened")
     }
     
     
@@ -323,7 +283,7 @@ extension MapViewController: MKMapViewDelegate {
             return MKOverlayRenderer()
         }
         let renderer = MKPolylineRenderer(polyline: polyLine)
-            renderer.strokeColor = .red
+            renderer.strokeColor = UIColor(hue: 0.6694, saturation: 1, brightness: 0.91, alpha: 1.0)
             renderer.lineWidth = 10.0
             renderer.alpha = 1.0
 
