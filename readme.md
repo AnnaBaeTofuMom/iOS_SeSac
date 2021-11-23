@@ -19,7 +19,7 @@
 
 🖌️ [Design](https://www.figma.com/file/KCnBgog7KWwLDON9irehCR/Rife-App-Design?node-id=0%3A1)
 
-🪚 [Today I learned](https://beforeanythingelse.notion.site/Today-I-Learned-Personal-Project-7dd5bc4745014201b837847df4d53bd9)
+🪚 [Team Building](https://beforeanythingelse.notion.site/Today-I-Learned-Personal-Project-7dd5bc4745014201b837847df4d53bd9)
 
 ---
 
