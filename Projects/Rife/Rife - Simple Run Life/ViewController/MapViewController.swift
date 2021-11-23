@@ -13,6 +13,9 @@ import MapKit
 import CoreLocation
 import CloudKit
 import RealmSwift
+import Kingfisher
+import SwiftyJSON
+import Alamofire
 
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
@@ -32,9 +35,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     var timer = Timer()
     var (hours, minutes, seconds, fractions) = (0, 0, 0, 0)
+    var currentWeather: String = ""
     
     
     
+    
+    @IBOutlet var weatherIconView: UIImageView!
     @IBOutlet var recordView: UIImageView!
     @IBOutlet var mapKit: MKMapView!
     @IBOutlet var resultDistanceLabel: UILabel!
@@ -43,7 +49,36 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var navigationBar: UIView!
     
     
-       
+    func fetchWeatherData() -> Void {
+            guard let currentLocation = locationManager.location else { return }
+            let lati = currentLocation.coordinate.latitude
+            let longi = currentLocation.coordinate.longitude
+                    let key = "e48c83dbb4739468d69bb4e998f8939d"
+                    let url = "http://api.openweathermap.org/data/2.5/weather?lat=\(lati)&lon=\(longi)&appid=\(key)"
+                    
+            AF.request(url, method: .get).validate().responseJSON { response in
+                switch response.result{
+                case .success: guard let result = response.data else { return }
+                    let json = JSON(result)
+                    for item in json["weather"].arrayValue {
+                        self.currentWeather = item["main"].stringValue
+                        let icon = item["icon"].stringValue
+                        let url = URL(string: "http://openweathermap.org/img/wn/\(icon)@2x.png")
+                        self.weatherIconView.kf.setImage(with: url)
+                        print("this is item \(item)")
+                        print("this is icon \(icon)")
+                        print("this is url \(url)")
+                        
+                        print("******************\(self.currentWeather)*****************")
+                    }
+                case .failure(let error):
+                    print("***************This is error**************",error)
+                    
+                    
+                }
+            }
+            
+        }
     
     
     func generateMapImage() {
@@ -134,6 +169,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchWeatherData()
         locationManager.requestAlwaysAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false

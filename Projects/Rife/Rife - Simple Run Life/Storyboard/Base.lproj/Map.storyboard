@@ -84,7 +84,11 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="US0-eC-gRl">
-                                <rect key="frame" x="349" y="151" width="49" height="48"/>
+                                <rect key="frame" x="355" y="145" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="97J-sL-0MQ"/>
+                                    <constraint firstAttribute="width" constant="55" id="QEE-ud-oRW"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfR-PQ-vqt">
                                 <rect key="frame" x="92" y="738" width="230" height="78"/>
@@ -125,7 +129,7 @@
                             <constraint firstItem="5N8-Wi-ibM" firstAttribute="leading" secondItem="C3S-aw-DAP" secondAttribute="leading" id="571-0q-SYV"/>
                             <constraint firstItem="Ahx-Ia-D7L" firstAttribute="leading" secondItem="cEq-eQ-LF2" secondAttribute="leading" id="5Gi-Xq-T4d"/>
                             <constraint firstItem="cEq-eQ-LF2" firstAttribute="trailing" secondItem="RfR-PQ-vqt" secondAttribute="trailing" constant="92" id="5nJ-Pf-c9D"/>
-                            <constraint firstItem="cEq-eQ-LF2" firstAttribute="trailing" secondItem="US0-eC-gRl" secondAttribute="trailing" constant="16" id="Cj0-55-6F3"/>
+                            <constraint firstItem="cEq-eQ-LF2" firstAttribute="trailing" secondItem="US0-eC-gRl" secondAttribute="trailing" constant="4" id="Cj0-55-6F3"/>
                             <constraint firstItem="qch-qh-flL" firstAttribute="top" secondItem="sex-qg-OQi" secondAttribute="bottom" id="GHh-S5-DQk"/>
                             <constraint firstItem="Sn4-LH-hym" firstAttribute="top" secondItem="qch-qh-flL" secondAttribute="bottom" constant="70" id="Gvs-jq-wQb"/>
                             <constraint firstItem="cEq-eQ-LF2" firstAttribute="bottom" secondItem="RfR-PQ-vqt" secondAttribute="bottom" constant="46" id="L2I-bK-gu2"/>
@@ -138,7 +142,7 @@
                             <constraint firstItem="sex-qg-OQi" firstAttribute="top" secondItem="5N8-Wi-ibM" secondAttribute="bottom" id="Y9i-7P-v30"/>
                             <constraint firstItem="Ahx-Ia-D7L" firstAttribute="trailing" secondItem="cEq-eQ-LF2" secondAttribute="trailing" id="bA3-Tn-IqZ"/>
                             <constraint firstItem="ClL-1I-0FM" firstAttribute="top" secondItem="Sn4-LH-hym" secondAttribute="bottom" constant="20" id="e8A-TL-BpK"/>
-                            <constraint firstItem="US0-eC-gRl" firstAttribute="top" secondItem="qch-qh-flL" secondAttribute="bottom" constant="10" id="gk6-FH-t9w"/>
+                            <constraint firstItem="US0-eC-gRl" firstAttribute="top" secondItem="qch-qh-flL" secondAttribute="bottom" constant="4" id="gk6-FH-t9w"/>
                             <constraint firstItem="Sn4-LH-hym" firstAttribute="leading" secondItem="cEq-eQ-LF2" secondAttribute="leading" constant="30" id="gqr-ol-oNi"/>
                             <constraint firstItem="5N8-Wi-ibM" firstAttribute="top" secondItem="C3S-aw-DAP" secondAttribute="top" id="jvT-E5-aKX"/>
                             <constraint firstItem="qch-qh-flL" firstAttribute="leading" secondItem="cEq-eQ-LF2" secondAttribute="leading" id="mV2-l6-xDz"/>
@@ -154,6 +158,7 @@
                         <outlet property="resultDistanceLabel" destination="Sn4-LH-hym" id="x8F-ce-KiI"/>
                         <outlet property="resultTimeLabel" destination="ClL-1I-0FM" id="BqL-Wk-Ror"/>
                         <outlet property="runButton" destination="RfR-PQ-vqt" id="PXW-rF-hq5"/>
+                        <outlet property="weatherIconView" destination="US0-eC-gRl" id="hmG-iy-fRV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
