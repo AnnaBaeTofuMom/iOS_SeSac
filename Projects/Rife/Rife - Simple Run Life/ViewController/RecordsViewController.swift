@@ -14,11 +14,13 @@ let task = localRealm.objects(RecordObject.self)
 
 
 class RecordsViewController: UIViewController {
+    @IBOutlet var calendarButton: UIButton!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        calendarButton.setTitle("", for: .normal)
         backButton.setTitle("", for: .normal)
         self.navigationItem.hidesBackButton = true
         self.navigationController?.isNavigationBarHidden = true
@@ -33,6 +35,10 @@ class RecordsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+    }
+    @IBAction func calendarButtonClicked(_ sender: UIButton) -> Void {
+        guard let rcv = self.storyboard?.instantiateViewController(withIdentifier: "Calendar") as? RecordCalendarViewController else { return }
+        self.navigationController?.pushViewController(rcv, animated: true)
     }
     
     @IBAction func backButtonClicked(_ sender: UIButton) {

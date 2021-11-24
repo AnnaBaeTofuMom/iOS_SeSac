@@ -39,6 +39,8 @@
 		3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 3A7A88EC274543F600315084 /* TextFieldEffects */; };
 		3AC08707274A4BA2006065FA /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC08706274A4BA2006065FA /* MapKitExtensions.swift */; };
 		3AC08710274A68B3006065FA /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0870F274A68B3006065FA /* RealmModel.swift */; };
+		3AE1F49A274EA9CA00AF79A7 /* RecordCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1F499274EA9CA00AF79A7 /* RecordCalendarViewController.swift */; };
+		3AE1F49D274EAAE700AF79A7 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE1F49C274EAAE700AF79A7 /* FSCalendar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,7 @@
 		3A7A88E9274520B100315084 /* RunMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RunMode.swift; path = ViewController/RunMode.swift; sourceTree = "<group>"; };
 		3AC08706274A4BA2006065FA /* MapKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapKitExtensions.swift; path = ViewController/MapKitExtensions.swift; sourceTree = "<group>"; };
 		3AC0870F274A68B3006065FA /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = SOURCE_ROOT; };
+		3AE1F499274EA9CA00AF79A7 /* RecordCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordCalendarViewController.swift; path = "Rife - Simple Run Life/Storyboard/RecordCalendarViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 				3A26E8A7274D6AA10086C055 /* Alamofire in Frameworks */,
 				3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */,
 				3A26E893274BFCD10086C055 /* NotificationBannerSwift in Frameworks */,
+				3AE1F49D274EAAE700AF79A7 /* FSCalendar in Frameworks */,
 				1A2DD6BB274E13F900D9EE56 /* RealmSwift in Frameworks */,
 				3A26E8A4274D6A880086C055 /* SwiftyJSON in Frameworks */,
 				3A26E8A1274D6A420086C055 /* Kingfisher in Frameworks */,
@@ -140,6 +144,7 @@
 		1A9BADBB2744DF9400208546 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3AE1F499274EA9CA00AF79A7 /* RecordCalendarViewController.swift */,
 				1A2DD6AC274B8AB600D9EE56 /* RecordDetailViewController.swift */,
 				1A9BADD227477C0800208546 /* RecordsTableViewCell.swift */,
 				1A9BADCB2744FB0100208546 /* ProfileViewController.swift */,
@@ -194,6 +199,7 @@
 				3A26E8A6274D6AA10086C055 /* Alamofire */,
 				1A2DD6B8274E13F900D9EE56 /* Realm */,
 				1A2DD6BA274E13F900D9EE56 /* RealmSwift */,
+				3AE1F49C274EAAE700AF79A7 /* FSCalendar */,
 			);
 			productName = "Rife - Simple Run Life";
 			productReference = 1A9BAD9A2744CFD600208546 /* Rife - Simple Run Life.app */;
@@ -232,6 +238,7 @@
 				3A26E8A2274D6A880086C055 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				3A26E8A5274D6AA10086C055 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1A2DD6B7274E13F900D9EE56 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				3AE1F49B274EAAE700AF79A7 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 1A9BAD9B2744CFD600208546 /* Products */;
 			projectDirPath = "";
@@ -274,6 +281,7 @@
 				3A4431C7274569C700C4A0E6 /* ContactViewController.swift in Sources */,
 				1A9BADC42744EF6200208546 /* SideMenuViewController.swift in Sources */,
 				3A26E895274BFDDE0086C055 /* ViewController+Extension.swift in Sources */,
+				3AE1F49A274EA9CA00AF79A7 /* RecordCalendarViewController.swift in Sources */,
 				1A9BADC02744EA4300208546 /* SideMenuNavigationController.swift in Sources */,
 				3A4431C32745653100C4A0E6 /* SettingsViewController.swift in Sources */,
 				3A4431C9274573ED00C4A0E6 /* RecordsViewController.swift in Sources */,
@@ -433,7 +441,11 @@
 				DEVELOPMENT_TEAM = 97JRLS4642;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rife - Simple Run Life/Info.plist";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "러닝 거리 트래킹을 위해 위치 정보가 필요합니다.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 업로드 하기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Map;
@@ -463,7 +475,11 @@
 				DEVELOPMENT_TEAM = 97JRLS4642;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rife - Simple Run Life/Info.plist";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "러닝 거리 트래킹을 위해 위치 정보가 필요합니다.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 업로드 하기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Map;
@@ -571,6 +587,14 @@
 				minimumVersion = 1.6.0;
 			};
 		};
+		3AE1F49B274EAAE700AF79A7 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -618,6 +642,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3A7A88EB274543F600315084 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
 			productName = TextFieldEffects;
+		};
+		3AE1F49C274EAAE700AF79A7 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AE1F49B274EAAE700AF79A7 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
