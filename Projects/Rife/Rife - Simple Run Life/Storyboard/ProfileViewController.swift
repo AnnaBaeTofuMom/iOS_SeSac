@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 
 class ProfileViewController: UIViewController, UINavigationControllerDelegate {
@@ -32,7 +33,15 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
         self.navigationController?.isNavigationBarHidden = true
         
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+        profileImageView.layer.borderColor = UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0).cgColor
+        profileImageView.layer.borderWidth = 1
         profileImageView.clipsToBounds = true
+        if let data: Data = UserDefaults.standard.data(forKey: "userImage") {
+            let image = UIImage(data: data)
+            profileImageView.image = image
+        }
+        
+        
         
         
         nameField.text = UserDefaults.standard.string(forKey: "userName")
@@ -101,9 +110,15 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
         view.endEditing(true)
     }
     @IBAction func saveButtonClicked(_ sender: UIButton) {
+        let data = profileImageView.image?.jpegData(compressionQuality: 1)
+        
+        UserDefaults.standard.set(data, forKey: "userImage")
         UserDefaults.standard.set("\(nameField.text!)", forKey: "userName")
         UserDefaults.standard.set("\(heightField.text!)", forKey: "userHeight")
         UserDefaults.standard.set("\(mottoField.text!)", forKey: "userMotto")
+        
+        let banner = NotificationBanner(title: "Well saved!", subtitle: "Your profile has been successfully saved!", style: .success)
+        banner.show()
         
     }
     @IBAction func editButtonClicked(_ sender: UIButton) {
