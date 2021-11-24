@@ -9,9 +9,11 @@ import UIKit
 
 class ContactViewController: UIViewController {
 
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var emailButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.setTitle("", for: .normal)
         emailButton.layer.cornerRadius = 15
         emailButton.layer.borderColor = UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0).cgColor
         emailButton.layer.borderWidth = 1

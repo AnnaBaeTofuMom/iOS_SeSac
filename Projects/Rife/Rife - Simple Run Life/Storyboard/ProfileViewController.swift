@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
     
     let imagePicker = UIImagePickerController()
 
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var totalDistanceField: UITextField!
     @IBOutlet var mottoField: UITextField!
     @IBOutlet var heightField: UITextField!
@@ -19,14 +20,14 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet var mainView: UIView!
     @IBOutlet var editButton: UIButton!
     @IBOutlet var profileImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backButton.setTitle("", for: .normal)
+        editButton.setTitle("", for: .normal)
         imagePicker.delegate = self
-
-        // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = true
         self.navigationController?.isNavigationBarHidden = true
         
@@ -52,6 +53,12 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
         totalDistanceField.layer.borderColor = UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0).cgColor
         totalDistanceField.layer.borderWidth = 1
         totalDistanceField.text = "YOU DIDN'T RUN YET"
+
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         
         
         

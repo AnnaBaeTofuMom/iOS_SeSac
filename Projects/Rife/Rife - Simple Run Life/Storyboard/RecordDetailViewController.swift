@@ -14,6 +14,8 @@ class RecordDetailViewController: UIViewController {
     @IBOutlet var distanceLabel: UILabel!
     var recordData: RecordObject!
     
+    @IBOutlet var saveButton: UIButton!
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var memoLabel: UILabel!
     @IBOutlet var memoTextView: UITextView!
     @IBOutlet var mapImageView: UIImageView!
@@ -21,6 +23,8 @@ class RecordDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        saveButton.setTitle("", for: .normal)
+        backButton.setTitle("", for: .normal)
         mapImageView.layer.cornerRadius = 5
         mapImageView.layer.borderColor = UIColor(hue: 0.4, saturation: 0.5, brightness: 0.99, alpha: 1.0).cgColor
         mapImageView.layer.borderWidth = 1

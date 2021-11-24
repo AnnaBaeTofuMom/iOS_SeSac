@@ -14,10 +14,12 @@ let task = localRealm.objects(RecordObject.self)
 
 
 class RecordsViewController: UIViewController {
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.setTitle("", for: .normal)
         self.navigationItem.hidesBackButton = true
         self.navigationController?.isNavigationBarHidden = true
         

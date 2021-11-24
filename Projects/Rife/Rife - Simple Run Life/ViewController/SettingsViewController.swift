@@ -9,12 +9,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var contactButton: UIButton!
     @IBOutlet var openSourceButton: UIButton!
     @IBOutlet var restoreButton: UIButton!
     @IBOutlet var backupButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.setTitle("", for: .normal)
         self.navigationItem.hidesBackButton = true
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         

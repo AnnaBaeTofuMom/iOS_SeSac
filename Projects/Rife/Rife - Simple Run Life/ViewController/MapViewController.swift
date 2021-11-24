@@ -202,8 +202,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
     
 
 
@@ -238,6 +236,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func runButtonClicked(_ sender: UIButton) {
         if runMode == .ready {
+            fetchWeatherData()
             resultTimeLabel.text = self.totalRunTime
             timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
             points = []
