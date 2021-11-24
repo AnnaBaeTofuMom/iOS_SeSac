@@ -24,6 +24,7 @@ class RecordDetailViewController: UIViewController {
         mapImageView.layer.cornerRadius = 5
         mapImageView.layer.borderColor = UIColor(hue: 0.4, saturation: 0.5, brightness: 0.99, alpha: 1.0).cgColor
         mapImageView.layer.borderWidth = 1
+        self.navigationController?.isNavigationBarHidden = true
         
         let distanceformatter = MKDistanceFormatter()
         distanceformatter.units = .metric

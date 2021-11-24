@@ -65,11 +65,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                         let icon = item["icon"].stringValue
                         let url = URL(string: "http://openweathermap.org/img/wn/\(icon)@2x.png")
                         self.weatherIconView.kf.setImage(with: url)
-                        print("this is item \(item)")
-                        print("this is icon \(icon)")
-                        print("this is url \(url)")
-                        
-                        print("******************\(self.currentWeather)*****************")
+                        print("********success************")
+                
                     }
                 case .failure(let error):
                     print("***************This is error**************",error)
@@ -169,6 +166,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
+        weatherIconView.layer.cornerRadius = weatherIconView.frame.width / 2
+        weatherIconView.layer.borderColor = UIColor(named: "black")?.cgColor
+        weatherIconView.layer.borderWidth = 1
         fetchWeatherData()
         locationManager.requestAlwaysAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true

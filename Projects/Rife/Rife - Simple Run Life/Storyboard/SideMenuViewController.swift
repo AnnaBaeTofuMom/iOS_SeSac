@@ -21,6 +21,7 @@ class SideMenuViewController: UIViewController {
         super.viewDidLoad()
         sideMenuView.layer.borderColor = UIColor(named: "black")?.cgColor
         sideMenuView.layer.borderWidth = 1
+        self.navigationController?.isNavigationBarHidden = true
         
         let profileNSAS = outline(string: "MY PROFILE", font: "NotoSansKR-Black", size: 25, outlineSize: 4, textColor: .white, outlineColor: .black)
         let recordsNSAS = outline(string: "RECORDS", font: "NotoSansKR-Black", size: 25, outlineSize: 4, textColor: .white, outlineColor: .black)

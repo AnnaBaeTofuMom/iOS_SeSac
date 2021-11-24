@@ -8,7 +8,9 @@
 import UIKit
 
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UINavigationControllerDelegate {
+    
+    let imagePicker = UIImagePickerController()
 
     @IBOutlet var totalDistanceField: UITextField!
     @IBOutlet var mottoField: UITextField!
@@ -19,24 +21,30 @@ class ProfileViewController: UIViewController {
     @IBOutlet var profileImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
 
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = true
+        self.navigationController?.isNavigationBarHidden = true
+        
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.clipsToBounds = true
         
+        
+        nameField.text = UserDefaults.standard.string(forKey: "userName")
         nameField.layer.borderColor = UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0).cgColor
         nameField.layer.borderWidth = 1
         nameField.attributedPlaceholder = NSAttributedString(string: "YOUR NAME", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0)])
         
-        
+        heightField.text = UserDefaults.standard.string(forKey: "userHeight")
         heightField.layer.borderColor = UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0).cgColor
         heightField.layer.borderWidth = 1
         heightField.attributedPlaceholder = NSAttributedString(string: "YOUR HEIGHT", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0)])
         
+        mottoField.text = UserDefaults.standard.string(forKey: "userMotto")
         mottoField.layer.borderColor = UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0).cgColor
         mottoField.layer.borderWidth = 1
         mottoField.attributedPlaceholder = NSAttributedString(string: "YOUR MOTTO", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0)])
@@ -50,17 +58,34 @@ class ProfileViewController: UIViewController {
         
         
     }
-    
+   
+    func openLibrary(){
 
-    /*
-    // MARK: - Navigation
+      imagePicker.sourceType = .photoLibrary
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+      present(imagePicker, animated: false, completion: nil)
+
     }
-    */
+
+    func openCamera(){
+
+        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+
+        imagePicker.sourceType = .camera
+
+                    present(imagePicker, animated: false, completion: nil)
+
+                }
+
+                else{
+
+                    print("Camera not available")
+
+                }
+
+
+    }
+
     @IBAction func backButtonClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -69,6 +94,46 @@ class ProfileViewController: UIViewController {
         view.endEditing(true)
     }
     @IBAction func saveButtonClicked(_ sender: UIButton) {
+        UserDefaults.standard.set("\(nameField.text!)", forKey: "userName")
+        UserDefaults.standard.set("\(heightField.text!)", forKey: "userHeight")
+        UserDefaults.standard.set("\(mottoField.text!)", forKey: "userMotto")
+        
+    }
+    @IBAction func editButtonClicked(_ sender: UIButton) {
+        let alert = UIAlertController(title: "이미지 불러오기", message: "이미지를 불러올 방법을 선택해 주세요.", preferredStyle: .actionSheet)
+        let library = UIAlertAction(title: "앨범에서 선택", style: .default) { action in
+            self.openLibrary()
+        }
+        let camera = UIAlertAction(title: "사진 찍기", style: .default) { action in
+            self.openCamera()
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(library)
+        alert.addAction(camera)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
+        
+        
     }
     
+}
+
+extension ProfileViewController : UIImagePickerControllerDelegate{
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+
+                    profileImageView.image = image
+
+                    print(info)
+
+                }
+
+                dismiss(animated: true, completion: nil)
+
+
+    }
+
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A2DD6AD274B8AB600D9EE56 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DD6AC274B8AB600D9EE56 /* RecordDetailViewController.swift */; };
+		1A2DD6B9274E13F900D9EE56 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1A2DD6B8274E13F900D9EE56 /* Realm */; };
+		1A2DD6BB274E13F900D9EE56 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A2DD6BA274E13F900D9EE56 /* RealmSwift */; };
 		1A9BAD9E2744CFD600208546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BAD9D2744CFD600208546 /* AppDelegate.swift */; };
 		1A9BADA02744CFD600208546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BAD9F2744CFD600208546 /* SceneDelegate.swift */; };
 		1A9BADA52744CFD600208546 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BADA32744CFD600208546 /* Map.storyboard */; };
@@ -36,8 +38,6 @@
 		3A7A88EA274520B100315084 /* RunMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A88E9274520B100315084 /* RunMode.swift */; };
 		3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 3A7A88EC274543F600315084 /* TextFieldEffects */; };
 		3AC08707274A4BA2006065FA /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC08706274A4BA2006065FA /* MapKitExtensions.swift */; };
-		3AC0870C274A6836006065FA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC0870B274A6836006065FA /* Realm */; };
-		3AC0870E274A6839006065FA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC0870D274A6839006065FA /* RealmSwift */; };
 		3AC08710274A68B3006065FA /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0870F274A68B3006065FA /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,11 +77,11 @@
 				3A26E8A7274D6AA10086C055 /* Alamofire in Frameworks */,
 				3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */,
 				3A26E893274BFCD10086C055 /* NotificationBannerSwift in Frameworks */,
+				1A2DD6BB274E13F900D9EE56 /* RealmSwift in Frameworks */,
 				3A26E8A4274D6A880086C055 /* SwiftyJSON in Frameworks */,
 				3A26E8A1274D6A420086C055 /* Kingfisher in Frameworks */,
 				1A9BADBE2744E90E00208546 /* SideMenu in Frameworks */,
-				3AC0870C274A6836006065FA /* Realm in Frameworks */,
-				3AC0870E274A6839006065FA /* RealmSwift in Frameworks */,
+				1A2DD6B9274E13F900D9EE56 /* Realm in Frameworks */,
 				1A9BADB32744D15D00208546 /* MarqueeLabel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,12 +188,12 @@
 				1A9BADB22744D15D00208546 /* MarqueeLabel */,
 				1A9BADBD2744E90E00208546 /* SideMenu */,
 				3A7A88EC274543F600315084 /* TextFieldEffects */,
-				3AC0870B274A6836006065FA /* Realm */,
-				3AC0870D274A6839006065FA /* RealmSwift */,
 				3A26E892274BFCD10086C055 /* NotificationBannerSwift */,
 				3A26E8A0274D6A420086C055 /* Kingfisher */,
 				3A26E8A3274D6A880086C055 /* SwiftyJSON */,
 				3A26E8A6274D6AA10086C055 /* Alamofire */,
+				1A2DD6B8274E13F900D9EE56 /* Realm */,
+				1A2DD6BA274E13F900D9EE56 /* RealmSwift */,
 			);
 			productName = "Rife - Simple Run Life";
 			productReference = 1A9BAD9A2744CFD600208546 /* Rife - Simple Run Life.app */;
@@ -227,11 +227,11 @@
 				1A9BADB12744D15D00208546 /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
 				1A9BADBC2744E90E00208546 /* XCRemoteSwiftPackageReference "SideMenu" */,
 				3A7A88EB274543F600315084 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
-				1A9BADD42747806400208546 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				3A26E891274BFCD10086C055 /* XCRemoteSwiftPackageReference "NotificationBanner" */,
 				3A26E89F274D6A420086C055 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				3A26E8A2274D6A880086C055 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				3A26E8A5274D6AA10086C055 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1A2DD6B7274E13F900D9EE56 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 1A9BAD9B2744CFD600208546 /* Products */;
 			projectDirPath = "";
@@ -357,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -413,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -439,7 +439,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Map;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,7 +469,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Map;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,6 +507,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1A2DD6B7274E13F900D9EE56 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		1A9BADB12744D15D00208546 /* XCRemoteSwiftPackageReference "MarqueeLabel" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cbpowell/MarqueeLabel.git";
@@ -521,14 +529,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 6.5.0;
-			};
-		};
-		1A9BADD42747806400208546 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.18.0;
 			};
 		};
 		3A26E891274BFCD10086C055 /* XCRemoteSwiftPackageReference "NotificationBanner" */ = {
@@ -574,6 +574,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1A2DD6B8274E13F900D9EE56 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A2DD6B7274E13F900D9EE56 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		1A2DD6BA274E13F900D9EE56 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A2DD6B7274E13F900D9EE56 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		1A9BADB22744D15D00208546 /* MarqueeLabel */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1A9BADB12744D15D00208546 /* XCRemoteSwiftPackageReference "MarqueeLabel" */;
@@ -608,16 +618,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3A7A88EB274543F600315084 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
 			productName = TextFieldEffects;
-		};
-		3AC0870B274A6836006065FA /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1A9BADD42747806400208546 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		3AC0870D274A6839006065FA /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1A9BADD42747806400208546 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
