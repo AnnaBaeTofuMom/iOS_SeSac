@@ -39,8 +39,8 @@
 		3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 3A7A88EC274543F600315084 /* TextFieldEffects */; };
 		3AC08707274A4BA2006065FA /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC08706274A4BA2006065FA /* MapKitExtensions.swift */; };
 		3AC08710274A68B3006065FA /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0870F274A68B3006065FA /* RealmModel.swift */; };
-		3AE1F49A274EA9CA00AF79A7 /* RecordCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1F499274EA9CA00AF79A7 /* RecordCalendarViewController.swift */; };
 		3AE1F49D274EAAE700AF79A7 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE1F49C274EAAE700AF79A7 /* FSCalendar */; };
+		3AE1F4A0274F1CF900AF79A7 /* ChannelIOSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE1F49F274F1CF900AF79A7 /* ChannelIOSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,6 @@
 		3A7A88E9274520B100315084 /* RunMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RunMode.swift; path = ViewController/RunMode.swift; sourceTree = "<group>"; };
 		3AC08706274A4BA2006065FA /* MapKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapKitExtensions.swift; path = ViewController/MapKitExtensions.swift; sourceTree = "<group>"; };
 		3AC0870F274A68B3006065FA /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = SOURCE_ROOT; };
-		3AE1F499274EA9CA00AF79A7 /* RecordCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordCalendarViewController.swift; path = "Rife - Simple Run Life/Storyboard/RecordCalendarViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +83,7 @@
 				1A2DD6BB274E13F900D9EE56 /* RealmSwift in Frameworks */,
 				3A26E8A4274D6A880086C055 /* SwiftyJSON in Frameworks */,
 				3A26E8A1274D6A420086C055 /* Kingfisher in Frameworks */,
+				3AE1F4A0274F1CF900AF79A7 /* ChannelIOSDK in Frameworks */,
 				1A9BADBE2744E90E00208546 /* SideMenu in Frameworks */,
 				1A2DD6B9274E13F900D9EE56 /* Realm in Frameworks */,
 				1A9BADB32744D15D00208546 /* MarqueeLabel in Frameworks */,
@@ -144,7 +144,6 @@
 		1A9BADBB2744DF9400208546 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3AE1F499274EA9CA00AF79A7 /* RecordCalendarViewController.swift */,
 				1A2DD6AC274B8AB600D9EE56 /* RecordDetailViewController.swift */,
 				1A9BADD227477C0800208546 /* RecordsTableViewCell.swift */,
 				1A9BADCB2744FB0100208546 /* ProfileViewController.swift */,
@@ -200,6 +199,7 @@
 				1A2DD6B8274E13F900D9EE56 /* Realm */,
 				1A2DD6BA274E13F900D9EE56 /* RealmSwift */,
 				3AE1F49C274EAAE700AF79A7 /* FSCalendar */,
+				3AE1F49F274F1CF900AF79A7 /* ChannelIOSDK */,
 			);
 			productName = "Rife - Simple Run Life";
 			productReference = 1A9BAD9A2744CFD600208546 /* Rife - Simple Run Life.app */;
@@ -239,6 +239,7 @@
 				3A26E8A5274D6AA10086C055 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1A2DD6B7274E13F900D9EE56 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				3AE1F49B274EAAE700AF79A7 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				3AE1F49E274F1CF900AF79A7 /* XCRemoteSwiftPackageReference "channel-talk-ios-framework" */,
 			);
 			productRefGroup = 1A9BAD9B2744CFD600208546 /* Products */;
 			projectDirPath = "";
@@ -281,7 +282,6 @@
 				3A4431C7274569C700C4A0E6 /* ContactViewController.swift in Sources */,
 				1A9BADC42744EF6200208546 /* SideMenuViewController.swift in Sources */,
 				3A26E895274BFDDE0086C055 /* ViewController+Extension.swift in Sources */,
-				3AE1F49A274EA9CA00AF79A7 /* RecordCalendarViewController.swift in Sources */,
 				1A9BADC02744EA4300208546 /* SideMenuNavigationController.swift in Sources */,
 				3A4431C32745653100C4A0E6 /* SettingsViewController.swift in Sources */,
 				3A4431C9274573ED00C4A0E6 /* RecordsViewController.swift in Sources */,
@@ -595,6 +595,14 @@
 				minimumVersion = 2.8.0;
 			};
 		};
+		3AE1F49E274F1CF900AF79A7 /* XCRemoteSwiftPackageReference "channel-talk-ios-framework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/channel-io/channel-talk-ios-framework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -647,6 +655,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3AE1F49B274EAAE700AF79A7 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		3AE1F49F274F1CF900AF79A7 /* ChannelIOSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AE1F49E274F1CF900AF79A7 /* XCRemoteSwiftPackageReference "channel-talk-ios-framework" */;
+			productName = ChannelIOSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

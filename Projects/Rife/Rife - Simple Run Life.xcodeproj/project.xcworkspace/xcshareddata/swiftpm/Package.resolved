@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "ChannelIOSDK",
+        "repositoryURL": "https://github.com/channel-io/channel-talk-ios-framework",
+        "state": {
+          "branch": null,
+          "revision": "05874ce995f733590032f5073d1e647442b88dab",
+          "version": "9.1.2"
+        }
+      },
+      {
         "package": "FSCalendar",
         "repositoryURL": "https://github.com/WenchaoD/FSCalendar.git",
         "state": {

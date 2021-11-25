@@ -74,7 +74,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.4941176471" green="0.99215686270000003" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.62352943419999995" green="0.98039215800000001" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="DNy-o9-6fP" firstAttribute="top" secondItem="O8c-L7-mTd" secondAttribute="top" constant="14" id="64J-BL-q6v"/>
                                     <constraint firstAttribute="height" constant="64" id="oXU-Ek-gEE"/>
@@ -101,6 +101,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="talkButton:" destination="tPF-5b-x6c" eventType="touchUpInside" id="GxL-0h-Phv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ppO-vN-wlw"/>

@@ -28,7 +28,6 @@ class RecordsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        
 
         // Do any additional setup after loading the view.
     }
@@ -36,10 +35,7 @@ class RecordsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
-    @IBAction func calendarButtonClicked(_ sender: UIButton) -> Void {
-        guard let rcv = self.storyboard?.instantiateViewController(withIdentifier: "Calendar") as? RecordCalendarViewController else { return }
-        self.navigationController?.pushViewController(rcv, animated: true)
-    }
+    
     
     @IBAction func backButtonClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
