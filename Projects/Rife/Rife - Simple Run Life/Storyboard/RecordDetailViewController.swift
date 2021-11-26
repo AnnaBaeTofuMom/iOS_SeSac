@@ -8,11 +8,13 @@
 import UIKit
 import MapKit
 import NotificationBannerSwift
+import RealmSwift
 
 class RecordDetailViewController: UIViewController {
         
     @IBOutlet var distanceLabel: UILabel!
     var recordData: RecordObject!
+    let localRealm = try! Realm()
     
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var backButton: UIButton!

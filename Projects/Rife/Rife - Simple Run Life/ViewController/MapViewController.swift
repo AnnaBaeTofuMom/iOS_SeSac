@@ -287,8 +287,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             print(recordImage)
             
 //            let data: Data = recordImage.jpegData(compressionQuality: 0.1)!
-            finalData = recordImage.jpegData(compressionQuality: 0.1)!
-            let task = RecordObject(image: self.finalData, distance: self.totalDistance, time: self.totalRunTime)
+            let data = recordImage.jpegData(compressionQuality: 0.1)!
+            let task = RecordObject(image: data, distance: self.totalDistance, time: self.totalRunTime)
             try! localRealm.write {
                 localRealm.add(task)
             }

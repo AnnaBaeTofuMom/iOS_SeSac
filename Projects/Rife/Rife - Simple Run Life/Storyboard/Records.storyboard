@@ -192,6 +192,7 @@
                         <outlet property="backButton" destination="AYk-a7-vmb" id="X51-Ro-qzU"/>
                         <outlet property="bigView" destination="UyY-aO-eqO" id="XFQ-Af-8Sm"/>
                         <outlet property="calendarButton" destination="SMI-we-Xm3" id="acs-HL-oLb"/>
+                        <outlet property="searchBar" destination="ar8-5n-9cZ" id="xw6-Is-KpW"/>
                         <outlet property="tableView" destination="5uR-OK-3ZE" id="GX7-aj-yhX"/>
                     </connections>
                 </viewController>
@@ -407,6 +408,14 @@
             <point key="canvasLocation" x="1406" y="877"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="PAS-qS-Nmb">
+            <size key="intrinsicContentSize" width="1059.5" height="29"/>
+        </designable>
+        <designable name="PBd-4U-6Sp">
+            <size key="intrinsicContentSize" width="1059.5" height="29"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Rectangle 34" width="584" height="184"/>
         <image name="back" width="36" height="36"/>
