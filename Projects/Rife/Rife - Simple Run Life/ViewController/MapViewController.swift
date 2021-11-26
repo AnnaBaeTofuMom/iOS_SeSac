@@ -36,6 +36,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var timer = Timer()
     var (hours, minutes, seconds, fractions) = (0, 0, 0, 0)
     var currentWeather: String = ""
+    var finalData: Data = Data()
     
     
     
@@ -285,8 +286,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
             print(recordImage)
             
-            let data: Data = recordImage.jpegData(compressionQuality: 0.1)!
-            let task = RecordObject(image: data, distance: self.totalDistance, time: self.totalRunTime)
+//            let data: Data = recordImage.jpegData(compressionQuality: 0.1)!
+            finalData = recordImage.jpegData(compressionQuality: 0.1)!
+            let task = RecordObject(image: self.finalData, distance: self.totalDistance, time: self.totalRunTime)
             try! localRealm.write {
                 localRealm.add(task)
             }
