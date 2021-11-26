@@ -77,16 +77,6 @@ class RecordsViewController: UIViewController, UISearchBarDelegate, UITableViewD
         self.tableView.reloadData()
     }
     
-    func searchBarIsEmpty() -> Bool {
-        return searchBarIsEmpty() ?? true
-    }
-    
-    var isFiltering: Bool {
-        let isFocused = searchBar.isFocused ?? false
-        let isSearchBarHasText = searchBarIsEmpty() == false
-        return isFocused && isSearchBarHasText
-    }
-    
     
     
     
