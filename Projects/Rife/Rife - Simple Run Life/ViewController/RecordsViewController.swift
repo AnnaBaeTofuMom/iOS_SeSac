@@ -17,6 +17,7 @@ class RecordsViewController: UIViewController {
     @IBOutlet var calendarButton: UIButton!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var bigView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,13 @@ class RecordsViewController: UIViewController {
         tableView.reloadData()
     }
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+
+         self.view.endEditing(true)
+
+   }
+
     
     @IBAction func backButtonClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)

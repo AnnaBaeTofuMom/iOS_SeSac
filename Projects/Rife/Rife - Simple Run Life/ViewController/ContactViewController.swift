@@ -48,6 +48,8 @@ class ContactViewController: UIViewController {
     */
 
     @IBAction func talkButton(_ sender: UIButton) {
+        ChannelIO.showMessenger()
+
         
     }
     @IBAction func backButtonClicked(_ sender: UIButton) {
