@@ -145,7 +145,7 @@ class RecordsViewController: UIViewController, UISearchBarDelegate, UITableViewD
     
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let rdv = self.storyboard?.instantiateViewController(withIdentifier: "RecordDetail") as! RecordDetailViewController
-            rdv.recordData = self.task[indexPath.row]
+            rdv.recordData = self.filteredTask[indexPath.row]
     
             self.navigationController?.pushViewController(rdv, animated: true)
         }

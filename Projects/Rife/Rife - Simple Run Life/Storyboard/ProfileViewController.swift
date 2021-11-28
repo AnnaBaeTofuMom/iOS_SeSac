@@ -112,6 +112,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
     @IBAction func saveButtonClicked(_ sender: UIButton) {
         let data = profileImageView.image?.jpegData(compressionQuality: 1)
         
+        
         UserDefaults.standard.set(data, forKey: "userImage")
         UserDefaults.standard.set("\(nameField.text!)", forKey: "userName")
         UserDefaults.standard.set("\(heightField.text!)", forKey: "userHeight")
