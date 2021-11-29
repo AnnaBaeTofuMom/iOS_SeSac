@@ -16,6 +16,7 @@ import RealmSwift
 import Kingfisher
 import SwiftyJSON
 import Alamofire
+import AuthenticationServices
 
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
@@ -49,20 +50,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var runButton: UIButton!
     @IBOutlet var navigationBar: UIView!
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-                case .authorizedAlways, .authorizedWhenInUse:
-                    print("GPS 권한 설정됨")
-                case .restricted, .notDetermined:
-                    print("GPS 권한 설정되지 않음")
-            locationManager.requestAlwaysAuthorization()
-                case .denied:
-                    print("GPS 권한 요청 거부됨")
-            locationManager.requestAlwaysAuthorization()
-                default:
-                    print("GPS: Default")
-                }
-    }
+    
     
     func fetchWeatherData() -> Void {
             guard let currentLocation = locationManager.location else { return }
@@ -217,7 +205,80 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    func checkUserLocationServicesAuthorization() {
+        let authorizationStatus: CLAuthorizationStatus
+        if #available(iOS 14, *) {
+            authorizationStatus = locationManager.authorizationStatus
+        } else {
+            authorizationStatus = CLLocationManager.authorizationStatus()
+        }
+        
+        if CLLocationManager.locationServicesEnabled() {
+            checkCurrentLocationAuthorization(authorizationStatus: authorizationStatus)
+        }
+    }
     
+    func checkCurrentLocationAuthorization(authorizationStatus: CLAuthorizationStatus) {
+        switch authorizationStatus {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+        case .restricted:
+            print("restricted")
+            goSetting()
+        case .denied:
+            print("denided")
+            goSetting()
+        case .authorizedAlways:
+            print("always")
+        case .authorizedWhenInUse:
+            print("wheninuse")
+            locationManager.startUpdatingLocation()
+        @unknown default:
+            print("unknown")
+        }
+        if #available(iOS 14.0, *) {
+            let accuracyState = locationManager.accuracyAuthorization
+            switch accuracyState {
+            case .fullAccuracy:
+                print("full")
+            case .reducedAccuracy:
+                print("reduced")
+            @unknown default:
+                print("Unknown")
+            }
+        }
+    }
+    
+    func goSetting() {
+        
+        let alert = UIAlertController(title: "위치권한 요청", message: "러닝 거리 기록을 위해 항상 위치 권한이 필요합니다.", preferredStyle: .alert)
+        let settingAction = UIAlertAction(title: "설정", style: .default) { action in
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            // 열 수 있는 url 이라면, 이동
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { UIAlertAction in
+            
+        }
+        
+        alert.addAction(settingAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        print(#function)
+        checkUserLocationServicesAuthorization()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print(#function)
+        checkUserLocationServicesAuthorization()
+    }
 
 
     @IBAction func sideBarButtonClicked(_ sender: UIButton) {
@@ -252,6 +313,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func runButtonClicked(_ sender: UIButton) {
         if runMode == .ready {
             fetchWeatherData()
+            locationManager.requestAlwaysAuthorization()
             resultTimeLabel.text = self.totalRunTime
             timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
             points = []
@@ -271,7 +333,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
             
         } else if runMode == .running {
-            locationManager.stopUpdatingLocation()
+            
             self.mapKit.showsUserLocation = false
             self.mapKit.setUserTrackingMode(.none, animated: true)
             runButton.setImage(UIImage(named: "Save"), for: .normal)
@@ -292,6 +354,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
 
         } else if runMode == .finished {
+            
             timer.invalidate()
             (hours, minutes, seconds, fractions) = (0, 0, 0, 0)
             resultTimeLabel.text = totalRunTime

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14.0, *)
 class RecordsTableViewCell: UITableViewCell {
 
     @IBOutlet var cellView: UIView!

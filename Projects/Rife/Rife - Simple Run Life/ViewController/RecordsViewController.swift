@@ -12,6 +12,7 @@ import MapKit
 
 
 
+@available(iOS 14.0, *)
 class RecordsViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     
@@ -37,6 +38,7 @@ class RecordsViewController: UIViewController, UISearchBarDelegate, UITableViewD
         searchBar.placeholder = "작성하신 메모로 기록을 검색해보세요."
         task = localRealm.objects(RecordObject.self)
         filteredTask = localRealm.objects(RecordObject.self)
+
         backButton.setTitle("", for: .normal)
         self.navigationItem.hidesBackButton = true
         self.navigationController?.isNavigationBarHidden = true
