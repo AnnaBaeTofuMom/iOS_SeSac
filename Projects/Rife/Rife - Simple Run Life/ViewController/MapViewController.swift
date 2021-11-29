@@ -49,6 +49,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var runButton: UIButton!
     @IBOutlet var navigationBar: UIView!
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+                case .authorizedAlways, .authorizedWhenInUse:
+                    print("GPS 권한 설정됨")
+                case .restricted, .notDetermined:
+                    print("GPS 권한 설정되지 않음")
+            locationManager.requestAlwaysAuthorization()
+                case .denied:
+                    print("GPS 권한 요청 거부됨")
+            locationManager.requestAlwaysAuthorization()
+                default:
+                    print("GPS: Default")
+                }
+    }
     
     func fetchWeatherData() -> Void {
             guard let currentLocation = locationManager.location else { return }
@@ -287,7 +301,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             print(recordImage)
             
 //            let data: Data = recordImage.jpegData(compressionQuality: 0.1)!
-            let data = recordImage.jpegData(compressionQuality: 0.1)!
+            lazy var data = recordImage.jpegData(compressionQuality: 0.1)!
             let task = RecordObject(image: data, distance: self.totalDistance, time: self.totalRunTime)
             try! localRealm.write {
                 localRealm.add(task)

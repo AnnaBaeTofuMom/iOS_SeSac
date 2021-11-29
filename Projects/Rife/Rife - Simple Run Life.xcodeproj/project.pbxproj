@@ -10,6 +10,9 @@
 		1A2DD6AD274B8AB600D9EE56 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DD6AC274B8AB600D9EE56 /* RecordDetailViewController.swift */; };
 		1A2DD6B9274E13F900D9EE56 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1A2DD6B8274E13F900D9EE56 /* Realm */; };
 		1A2DD6BB274E13F900D9EE56 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A2DD6BA274E13F900D9EE56 /* RealmSwift */; };
+		1A2DD6BD2754B16500D9EE56 /* OpensourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DD6BC2754B16500D9EE56 /* OpensourceTableViewCell.swift */; };
+		1A2DD6BF2754B1D600D9EE56 /* OpensourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DD6BE2754B1D600D9EE56 /* OpensourceViewController.swift */; };
+		1A2DD6C22754B8B900D9EE56 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 1A2DD6C12754B8B900D9EE56 /* Zip */; };
 		1A9BAD9E2744CFD600208546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BAD9D2744CFD600208546 /* AppDelegate.swift */; };
 		1A9BADA02744CFD600208546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BAD9F2744CFD600208546 /* SceneDelegate.swift */; };
 		1A9BADA52744CFD600208546 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BADA32744CFD600208546 /* Map.storyboard */; };
@@ -36,15 +39,15 @@
 		3A4431C7274569C700C4A0E6 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4431C6274569C700C4A0E6 /* ContactViewController.swift */; };
 		3A4431C9274573ED00C4A0E6 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4431C8274573ED00C4A0E6 /* RecordsViewController.swift */; };
 		3A7A88EA274520B100315084 /* RunMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A88E9274520B100315084 /* RunMode.swift */; };
-		3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 3A7A88EC274543F600315084 /* TextFieldEffects */; };
 		3AC08707274A4BA2006065FA /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC08706274A4BA2006065FA /* MapKitExtensions.swift */; };
 		3AC08710274A68B3006065FA /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0870F274A68B3006065FA /* RealmModel.swift */; };
-		3AE1F49D274EAAE700AF79A7 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE1F49C274EAAE700AF79A7 /* FSCalendar */; };
 		3AE1F4A0274F1CF900AF79A7 /* ChannelIOSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE1F49F274F1CF900AF79A7 /* ChannelIOSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A2DD6AC274B8AB600D9EE56 /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordDetailViewController.swift; path = "Rife - Simple Run Life/Storyboard/RecordDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
+		1A2DD6BC2754B16500D9EE56 /* OpensourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpensourceTableViewCell.swift; path = "Rife - Simple Run Life/Storyboard/OpensourceTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		1A2DD6BE2754B1D600D9EE56 /* OpensourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpensourceViewController.swift; sourceTree = "<group>"; };
 		1A9BAD9A2744CFD600208546 /* Rife - Simple Run Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rife - Simple Run Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9BAD9D2744CFD600208546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A9BAD9F2744CFD600208546 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,11 +80,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A26E8A7274D6AA10086C055 /* Alamofire in Frameworks */,
-				3A7A88ED274543F600315084 /* TextFieldEffects in Frameworks */,
 				3A26E893274BFCD10086C055 /* NotificationBannerSwift in Frameworks */,
-				3AE1F49D274EAAE700AF79A7 /* FSCalendar in Frameworks */,
 				1A2DD6BB274E13F900D9EE56 /* RealmSwift in Frameworks */,
 				3A26E8A4274D6A880086C055 /* SwiftyJSON in Frameworks */,
+				1A2DD6C22754B8B900D9EE56 /* Zip in Frameworks */,
 				3A26E8A1274D6A420086C055 /* Kingfisher in Frameworks */,
 				3AE1F4A0274F1CF900AF79A7 /* ChannelIOSDK in Frameworks */,
 				1A9BADBE2744E90E00208546 /* SideMenu in Frameworks */,
@@ -144,10 +146,12 @@
 		1A9BADBB2744DF9400208546 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1A2DD6BC2754B16500D9EE56 /* OpensourceTableViewCell.swift */,
 				1A2DD6AC274B8AB600D9EE56 /* RecordDetailViewController.swift */,
 				1A9BADD227477C0800208546 /* RecordsTableViewCell.swift */,
 				1A9BADCB2744FB0100208546 /* ProfileViewController.swift */,
 				3A4431C22745653000C4A0E6 /* SettingsViewController.swift */,
+				1A2DD6BE2754B1D600D9EE56 /* OpensourceViewController.swift */,
 				1A9BADC32744EF6200208546 /* SideMenuViewController.swift */,
 				1A9BADBF2744EA4200208546 /* SideMenuNavigationController.swift */,
 				1A9BADB82744DF8000208546 /* MapViewController.swift */,
@@ -191,15 +195,14 @@
 			packageProductDependencies = (
 				1A9BADB22744D15D00208546 /* MarqueeLabel */,
 				1A9BADBD2744E90E00208546 /* SideMenu */,
-				3A7A88EC274543F600315084 /* TextFieldEffects */,
 				3A26E892274BFCD10086C055 /* NotificationBannerSwift */,
 				3A26E8A0274D6A420086C055 /* Kingfisher */,
 				3A26E8A3274D6A880086C055 /* SwiftyJSON */,
 				3A26E8A6274D6AA10086C055 /* Alamofire */,
 				1A2DD6B8274E13F900D9EE56 /* Realm */,
 				1A2DD6BA274E13F900D9EE56 /* RealmSwift */,
-				3AE1F49C274EAAE700AF79A7 /* FSCalendar */,
 				3AE1F49F274F1CF900AF79A7 /* ChannelIOSDK */,
+				1A2DD6C12754B8B900D9EE56 /* Zip */,
 			);
 			productName = "Rife - Simple Run Life";
 			productReference = 1A9BAD9A2744CFD600208546 /* Rife - Simple Run Life.app */;
@@ -232,14 +235,13 @@
 			packageReferences = (
 				1A9BADB12744D15D00208546 /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
 				1A9BADBC2744E90E00208546 /* XCRemoteSwiftPackageReference "SideMenu" */,
-				3A7A88EB274543F600315084 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				3A26E891274BFCD10086C055 /* XCRemoteSwiftPackageReference "NotificationBanner" */,
 				3A26E89F274D6A420086C055 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				3A26E8A2274D6A880086C055 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				3A26E8A5274D6AA10086C055 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1A2DD6B7274E13F900D9EE56 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-				3AE1F49B274EAAE700AF79A7 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				3AE1F49E274F1CF900AF79A7 /* XCRemoteSwiftPackageReference "channel-talk-ios-framework" */,
+				1A2DD6C02754B8B900D9EE56 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 1A9BAD9B2744CFD600208546 /* Products */;
 			projectDirPath = "";
@@ -279,6 +281,7 @@
 				1A9BADA02744CFD600208546 /* SceneDelegate.swift in Sources */,
 				1A9BADB92744DF8000208546 /* MapViewController.swift in Sources */,
 				3A7A88EA274520B100315084 /* RunMode.swift in Sources */,
+				1A2DD6BF2754B1D600D9EE56 /* OpensourceViewController.swift in Sources */,
 				3A4431C7274569C700C4A0E6 /* ContactViewController.swift in Sources */,
 				1A9BADC42744EF6200208546 /* SideMenuViewController.swift in Sources */,
 				3A26E895274BFDDE0086C055 /* ViewController+Extension.swift in Sources */,
@@ -287,6 +290,7 @@
 				3A4431C9274573ED00C4A0E6 /* RecordsViewController.swift in Sources */,
 				1A9BADD327477C0800208546 /* RecordsTableViewCell.swift in Sources */,
 				3AC08710274A68B3006065FA /* RealmModel.swift in Sources */,
+				1A2DD6BD2754B16500D9EE56 /* OpensourceTableViewCell.swift in Sources */,
 				3AC08707274A4BA2006065FA /* MapKitExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +535,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		1A2DD6C02754B8B900D9EE56 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		1A9BADB12744D15D00208546 /* XCRemoteSwiftPackageReference "MarqueeLabel" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cbpowell/MarqueeLabel.git";
@@ -579,22 +591,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		3A7A88EB274543F600315084 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.0;
-			};
-		};
-		3AE1F49B274EAAE700AF79A7 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.0;
-			};
-		};
 		3AE1F49E274F1CF900AF79A7 /* XCRemoteSwiftPackageReference "channel-talk-ios-framework" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/channel-io/channel-talk-ios-framework";
@@ -615,6 +611,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A2DD6B7274E13F900D9EE56 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		1A2DD6C12754B8B900D9EE56 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A2DD6C02754B8B900D9EE56 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 		1A9BADB22744D15D00208546 /* MarqueeLabel */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -645,16 +646,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3A26E8A5274D6AA10086C055 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		3A7A88EC274543F600315084 /* TextFieldEffects */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3A7A88EB274543F600315084 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
-			productName = TextFieldEffects;
-		};
-		3AE1F49C274EAAE700AF79A7 /* FSCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3AE1F49B274EAAE700AF79A7 /* XCRemoteSwiftPackageReference "FSCalendar" */;
-			productName = FSCalendar;
 		};
 		3AE1F49F274F1CF900AF79A7 /* ChannelIOSDK */ = {
 			isa = XCSwiftPackageProductDependency;
