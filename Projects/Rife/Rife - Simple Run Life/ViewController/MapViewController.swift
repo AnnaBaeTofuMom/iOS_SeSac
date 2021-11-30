@@ -394,21 +394,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 print("saved")
             }
-            let cancelAction = UIAlertAction(title: "취소", style: .cancel) { Action in
+            let cancelAction = UIAlertAction(title: "기록 삭제", style: .destructive) { Action in
                 
             }
-            
-            
             
             alert.addAction(okAction)
             alert.addAction(cancelAction)
             alert.addTextField()
-            
-            
             present(alert, animated: true)
-            
-            
-            
             
         } else {
             
