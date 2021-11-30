@@ -22,7 +22,7 @@ class RecordObject: Object {
     @Persisted var stringDate: String
     
 
-    convenience init(image: Data, distance: CLLocationDistance, time: String) {
+    convenience init(image: Data, distance: CLLocationDistance, time: String, memo: String) {
         
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "YYYY-MM-dd"
@@ -32,7 +32,7 @@ class RecordObject: Object {
         self.image = image
         self.distance = distance
         self.time = time
-        self.memo = ""
+        self.memo = memo
         self.stringDate = dateformatter.string(from: date)
     }
 }

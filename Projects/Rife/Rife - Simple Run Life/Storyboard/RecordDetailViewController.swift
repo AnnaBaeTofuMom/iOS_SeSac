@@ -49,6 +49,7 @@ class RecordDetailViewController: UIViewController {
         memoTextView.layer.cornerRadius = 5
         memoTextView.layer.borderWidth = 1
         memoTextView.layer.borderColor = UIColor(hue: 0.4, saturation: 0.5, brightness: 0.99, alpha: 1.0).cgColor
+        memoTextView.text = recordData.memo
         
         
         

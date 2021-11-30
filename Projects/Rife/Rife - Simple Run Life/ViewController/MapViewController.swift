@@ -38,6 +38,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var (hours, minutes, seconds, fractions) = (0, 0, 0, 0)
     var currentWeather: String = ""
     var finalData: Data = Data()
+    var recordMemo: String = ""
     
     
     
@@ -312,6 +313,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func runButtonClicked(_ sender: UIButton) {
         if runMode == .ready {
+            let authorizationStatus: CLAuthorizationStatus
+            if #available(iOS 14, *) {
+                authorizationStatus = locationManager.authorizationStatus
+                
+                
+            } else {
+                authorizationStatus = CLLocationManager.authorizationStatus()
+            }
+            checkCurrentLocationAuthorization(authorizationStatus: authorizationStatus)
+            
             fetchWeatherData()
             locationManager.requestAlwaysAuthorization()
             resultTimeLabel.text = self.totalRunTime
@@ -347,7 +358,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             generateMapImage()
             timer.invalidate()
             
-            
+            locationManager.stopUpdatingLocation()
             
             resultTimeLabel.text = self.totalRunTime
             
@@ -360,15 +371,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             resultTimeLabel.text = totalRunTime
             // is when user tapped Save button
             self.mapKit.setUserTrackingMode(.follow, animated: true)
+            locationManager.stopUpdatingLocation()
             
             print(recordImage)
             
 //            let data: Data = recordImage.jpegData(compressionQuality: 0.1)!
-            lazy var data = recordImage.jpegData(compressionQuality: 0.1)!
-            let task = RecordObject(image: data, distance: self.totalDistance, time: self.totalRunTime)
-            try! localRealm.write {
-                localRealm.add(task)
-            }
+            
             let overlays = mapKit.overlays
             mapKit.removeOverlays(overlays)
             runButton.setImage(UIImage(named: "Start"), for: .normal)
@@ -377,9 +385,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             resultTimeLabel.isHidden = true
             self.mapKit.showsUserLocation = true
             
+            let alert = UIAlertController(title: "기록 저장하기", message: "이 기록에 메모를 남겨주세요.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "저장", style: .default) { action in
+                lazy var data = self.recordImage.jpegData(compressionQuality: 0.1)!
+                let task = RecordObject(image: data, distance: self.totalDistance, time: self.totalRunTime, memo: alert.textFields?[0].text ?? "")
+                try! self.localRealm.write {
+                    self.localRealm.add(task)
+                }
+                print("saved")
+            }
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel) { Action in
+                
+            }
             
             
             
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            alert.addTextField()
+            
+            
+            present(alert, animated: true)
             
             
             
