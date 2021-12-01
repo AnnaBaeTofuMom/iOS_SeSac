@@ -323,24 +323,41 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             }
             checkCurrentLocationAuthorization(authorizationStatus: authorizationStatus)
             
-            fetchWeatherData()
-            locationManager.requestAlwaysAuthorization()
-            resultTimeLabel.text = self.totalRunTime
-            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
-            points = []
-            self.totalDistance = CLLocationDistance()
+            if authorizationStatus == .authorizedAlways {
+                fetchWeatherData()
+                locationManager.requestAlwaysAuthorization()
+                resultTimeLabel.text = self.totalRunTime
+                timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
+                self.totalDistance = CLLocationDistance()
+                self.previousCoordinate = locationManager.location?.coordinate
+                locationManager.startUpdatingLocation()
+                self.points = []
+                self.mapKit.showsUserLocation = true
+                self.mapKit.setUserTrackingMode(.follow, animated: true)
+                runButton.setImage(UIImage(named: "Stop"), for: .normal)
+                self.runMode = .running
+                resultDistanceLabel.isHidden = false
+                resultTimeLabel.isHidden = false
+            } else {
+                let alert = UIAlertController(title: "러닝 시작 실패", message: "위치 권한을 항상 허용해야 정확한 측정이 가능합니다.", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "확인", style: .default) { action in
+                    
+                }
+                let gosetting = UIAlertAction(title: "설정 변경", style: .default) { Action in
+                    guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+                    // 열 수 있는 url 이라면, 이동
+                    if UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                alert.addAction(ok)
+                alert.addAction(gosetting)
+                
+                present(alert, animated: true) {
+                    
+                }
+            }
             
-            
-            self.previousCoordinate = locationManager.location?.coordinate
-
-            locationManager.startUpdatingLocation()
-            self.points = []
-            self.mapKit.showsUserLocation = true
-            self.mapKit.setUserTrackingMode(.follow, animated: true)
-            runButton.setImage(UIImage(named: "Stop"), for: .normal)
-            self.runMode = .running
-            resultDistanceLabel.isHidden = false
-            resultTimeLabel.isHidden = false
             
             
         } else if runMode == .running {
