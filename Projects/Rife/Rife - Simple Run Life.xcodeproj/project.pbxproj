@@ -445,16 +445,20 @@
 				DEVELOPMENT_TEAM = 97JRLS4642;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rife - Simple Run Life/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rife - 심플한 러닝 기록 앱";
 				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 업로드 하기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "영상 또는 녹음을 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 사용을 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Map;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -479,16 +483,20 @@
 				DEVELOPMENT_TEAM = 97JRLS4642;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rife - Simple Run Life/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rife - 심플한 러닝 기록 앱";
 				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 업로드 하기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "영상 또는 녹음을 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 사용을 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Map;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

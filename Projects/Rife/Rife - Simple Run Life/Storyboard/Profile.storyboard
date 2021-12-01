@@ -129,7 +129,7 @@
                                 <fontDescription key="fontDescription" name="NotoSansKR-Light" family="Noto Sans KR" pointSize="0.0"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YOU RAN" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z05-ys-Wm4">
+                            <textField hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YOU RAN" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z05-ys-Wm4">
                                 <rect key="frame" x="107" y="615" width="200" height="37"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -229,6 +229,11 @@
             <point key="canvasLocation" x="1639.1304347826087" y="16.741071428571427"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="9O4-8h-zVm">
+            <size key="intrinsicContentSize" width="1098" height="29"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Edit" width="84" height="36"/>
         <image name="Save-small" width="127" height="39"/>

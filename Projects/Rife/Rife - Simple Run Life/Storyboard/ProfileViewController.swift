@@ -9,7 +9,7 @@ import UIKit
 import NotificationBannerSwift
 
 
-class ProfileViewController: UIViewController, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let imagePicker = UIImagePickerController()
 
@@ -39,6 +39,9 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
         if let data: Data = UserDefaults.standard.data(forKey: "userImage") {
             let image = UIImage(data: data)
             profileImageView.image = image
+            nameField.delegate = self
+            heightField.delegate = self
+            mottoField.delegate = self
         }
         
         
@@ -48,6 +51,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
         nameField.layer.borderColor = UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0).cgColor
         nameField.layer.borderWidth = 1
         nameField.attributedPlaceholder = NSAttributedString(string: "YOUR NAME", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0)])
+        
         
         heightField.text = UserDefaults.standard.string(forKey: "userHeight")
         heightField.layer.borderColor = UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0).cgColor
@@ -67,12 +71,25 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-        
-        
-        
-        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("dddddd")
+        if nameField.isEditing == true {
+            nameField.placeholder = ""
+        }
+        if mottoField.isEditing == true {
+            mottoField.placeholder = ""
+        }
+        if heightField.isEditing == true {
+            heightField.placeholder = ""
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        nameField.placeholder = "YOUR NAME"
+        mottoField.placeholder = "YOUR MOTTO"
+        heightField.placeholder = "YOUR HEIGHT"
     }
    
     func openLibrary(){
