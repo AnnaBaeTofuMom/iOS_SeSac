@@ -325,7 +325,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
             if authorizationStatus == .authorizedAlways {
                 fetchWeatherData()
-                locationManager.requestAlwaysAuthorization()
                 resultTimeLabel.text = self.totalRunTime
                 timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
                 self.totalDistance = CLLocationDistance()

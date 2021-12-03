@@ -447,9 +447,9 @@
 				INFOPLIST_FILE = "Rife - Simple Run Life/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Rife - 심플한 러닝 기록 앱";
 				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 업로드 하기 위해 권한이 필요합니다.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Rife는 당신의 러닝 거리와 위치를 저장해 주는 앱 입니다. 백그라운드에서도 지도상에 달린 경로를 기록하기 위해 위치 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Rife는 당신의 러닝 거리와 위치를 저장해 주는 앱 입니다. 백그라운드에서도 지도상에 달린 경로를 기록하기 위해 위치 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Rife는 당신의 러닝 거리와 위치를 저장해 주는 앱 입니다. 백그라운드에서도 지도상에 달린 경로를 기록하기 위해 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "영상 또는 녹음을 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 사용을 위해 권한이 필요합니다.";
@@ -485,9 +485,9 @@
 				INFOPLIST_FILE = "Rife - Simple Run Life/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Rife - 심플한 러닝 기록 앱";
 				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 업로드 하기 위해 권한이 필요합니다.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱 활용을 위해 위치 권한이 항상 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Rife는 당신의 러닝 거리와 위치를 저장해 주는 앱 입니다. 백그라운드에서도 지도상에 달린 경로를 기록하기 위해 위치 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Rife는 당신의 러닝 거리와 위치를 저장해 주는 앱 입니다. 백그라운드에서도 지도상에 달린 경로를 기록하기 위해 위치 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Rife는 당신의 러닝 거리와 위치를 저장해 주는 앱 입니다. 백그라운드에서도 지도상에 달린 경로를 기록하기 위해 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "영상 또는 녹음을 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 사용을 위해 권한이 필요합니다.";
