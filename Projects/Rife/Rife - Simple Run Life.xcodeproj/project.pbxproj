@@ -13,6 +13,7 @@
 		1A2DD6BD2754B16500D9EE56 /* OpensourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DD6BC2754B16500D9EE56 /* OpensourceTableViewCell.swift */; };
 		1A2DD6BF2754B1D600D9EE56 /* OpensourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2DD6BE2754B1D600D9EE56 /* OpensourceViewController.swift */; };
 		1A2DD6C22754B8B900D9EE56 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 1A2DD6C12754B8B900D9EE56 /* Zip */; };
+		1A2DD6C8275DED6E00D9EE56 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A2DD6C7275DED6E00D9EE56 /* IQKeyboardManagerSwift */; };
 		1A9BAD9E2744CFD600208546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BAD9D2744CFD600208546 /* AppDelegate.swift */; };
 		1A9BADA02744CFD600208546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BAD9F2744CFD600208546 /* SceneDelegate.swift */; };
 		1A9BADA52744CFD600208546 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BADA32744CFD600208546 /* Map.storyboard */; };
@@ -88,6 +89,7 @@
 				3AE1F4A0274F1CF900AF79A7 /* ChannelIOSDK in Frameworks */,
 				1A9BADBE2744E90E00208546 /* SideMenu in Frameworks */,
 				1A2DD6B9274E13F900D9EE56 /* Realm in Frameworks */,
+				1A2DD6C8275DED6E00D9EE56 /* IQKeyboardManagerSwift in Frameworks */,
 				1A9BADB32744D15D00208546 /* MarqueeLabel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +205,7 @@
 				1A2DD6BA274E13F900D9EE56 /* RealmSwift */,
 				3AE1F49F274F1CF900AF79A7 /* ChannelIOSDK */,
 				1A2DD6C12754B8B900D9EE56 /* Zip */,
+				1A2DD6C7275DED6E00D9EE56 /* IQKeyboardManagerSwift */,
 			);
 			productName = "Rife - Simple Run Life";
 			productReference = 1A9BAD9A2744CFD600208546 /* Rife - Simple Run Life.app */;
@@ -242,6 +245,7 @@
 				1A2DD6B7274E13F900D9EE56 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				3AE1F49E274F1CF900AF79A7 /* XCRemoteSwiftPackageReference "channel-talk-ios-framework" */,
 				1A2DD6C02754B8B900D9EE56 /* XCRemoteSwiftPackageReference "Zip" */,
+				1A2DD6C6275DED6E00D9EE56 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 1A9BAD9B2744CFD600208546 /* Products */;
 			projectDirPath = "";
@@ -551,6 +555,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		1A2DD6C6275DED6E00D9EE56 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
 		1A9BADB12744D15D00208546 /* XCRemoteSwiftPackageReference "MarqueeLabel" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cbpowell/MarqueeLabel.git";
@@ -624,6 +636,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A2DD6C02754B8B900D9EE56 /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
+		};
+		1A2DD6C7275DED6E00D9EE56 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A2DD6C6275DED6E00D9EE56 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		1A9BADB22744D15D00208546 /* MarqueeLabel */ = {
 			isa = XCSwiftPackageProductDependency;

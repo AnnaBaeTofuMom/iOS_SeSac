@@ -39,6 +39,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var currentWeather: String = ""
     var finalData: Data = Data()
     var recordMemo: String = ""
+    var startTime: Date = Date()
+    var endTime: Date = Date()
     
     
     
@@ -311,6 +313,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    
+    
     @IBAction func runButtonClicked(_ sender: UIButton) {
         if runMode == .ready {
             let authorizationStatus: CLAuthorizationStatus
@@ -338,7 +342,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 resultDistanceLabel.isHidden = false
                 resultTimeLabel.isHidden = false
             } else {
-                let alert = UIAlertController(title: "러닝 시작 실패", message: "위치 권한을 항상 허용해야 정확한 측정이 가능합니다.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "러닝 시작 실패", message: "위치 권한을 항상 허용해야 정확한 거리  측정이 가능합니다.", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "확인", style: .default) { action in
                     
                 }
@@ -375,8 +379,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             timer.invalidate()
             
             locationManager.stopUpdatingLocation()
-            
+            endTime = Date()
             resultTimeLabel.text = self.totalRunTime
+          
+            
+            
+            
             
             
 

@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 import RealmSwift
 import ChannelIOFront
+import IQKeyboardManagerSwift
 
 
 
@@ -23,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         sleep(1)
         ChannelIO.initialize(application)
+        IQKeyboardManager.shared.enable = true
         return true
+        
     }
 
     // MARK: UISceneSession Lifecycle
