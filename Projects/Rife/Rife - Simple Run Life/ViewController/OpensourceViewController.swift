@@ -9,9 +9,9 @@ import UIKit
 
 class OpensourceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var libraryArr:[String] = ["Alamofire", "ChannelIOSDK", "Kingfisher", "MarqueeLabel", "NotificationBannerSwift", "Realm", "SideMenu", "Snapkit", "SwiftyJSON"]
+    var libraryArr:[String] = ["Alamofire", "ChannelIOSDK", "Kingfisher", "MarqueeLabel", "NotificationBannerSwift", "Realm", "SideMenu", "Snapkit", "SwiftyJSON","IQKeyboardManager"]
     
-    var urlArr:[String] = ["Elegant HTTP Networking in Swift", "For smooth communication with user and developer", "Easy image caching from web", "Make a beautiful streaming label", "Simple notification banner for Swift", "Embedded object-oriented database", " Customizable side menu for Swift", "For easy auto-layout", "Make it easy to deal with JSON data in Swift"]
+    var urlArr:[String] = ["Elegant HTTP Networking in Swift", "For smooth communication with user and developer", "Easy image caching from web", "Make a beautiful streaming label", "Simple notification banner for Swift", "Embedded object-oriented database", " Customizable side menu for Swift", "For easy auto-layout", "Make it easy to deal with JSON data in Swift", "sliding up and down keyboard without issues"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         libraryArr.count

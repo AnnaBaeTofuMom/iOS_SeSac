@@ -201,12 +201,43 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         resultDistanceLabel.isHidden = true
         resultTimeLabel.isHidden = true
+        setNotifications()
         
         
         //locationManager.startUpdatingLocation()
         
         
     }
+    
+    
+    @objc func addbackGroundTime(_ notification:Notification) {
+        if runMode == .running {
+            //노티피케이션센터를 통해 값을 받아옴
+            let time = notification.userInfo?["time"] as? Int ?? 0
+            print("this is time: \(time)")
+            //받아온 시간을 60으로 나눈 몫은 분
+            hours += time/3600
+            
+            minutes += time/60
+            //받아온 시간을 60으로 나눈 나머지는 초
+            seconds += time%60
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
+        }
+    }
+    
+    @objc func stopTimer() {
+        timer.invalidate()
+        resultTimeLabel.text = "00:00:00"
+    }
+    
+    
+    func setNotifications() {
+            //백그라운드에서 포어그라운드로 돌아올때
+            NotificationCenter.default.addObserver(self, selector: #selector(addbackGroundTime(_:)), name: NSNotification.Name("sceneWillEnterForeground"), object: nil)
+            //포어그라운드에서 백그라운드로 갈때
+            NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: NSNotification.Name("sceneDidEnterBackground"), object: nil)
+        }
+
     
     func checkUserLocationServicesAuthorization() {
         let authorizationStatus: CLAuthorizationStatus
@@ -289,11 +320,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @objc func keepTimer() {
-        fractions += 1
-        if fractions > 99 {
-            seconds += 1
-            fractions = 0
-        }
+        seconds += 1
         
         if seconds == 60 {
             minutes += 1
@@ -329,8 +356,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
             if authorizationStatus == .authorizedAlways {
                 fetchWeatherData()
-                resultTimeLabel.text = self.totalRunTime
-                timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
+                resultTimeLabel.text = "00:00:00"
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
                 self.totalDistance = CLLocationDistance()
                 self.previousCoordinate = locationManager.location?.coordinate
                 locationManager.startUpdatingLocation()
@@ -392,7 +419,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
             timer.invalidate()
             (hours, minutes, seconds, fractions) = (0, 0, 0, 0)
-            resultTimeLabel.text = totalRunTime
+            resultTimeLabel.text = "00:00:00"
             // is when user tapped Save button
             self.mapKit.setUserTrackingMode(.follow, animated: true)
             locationManager.stopUpdatingLocation()
