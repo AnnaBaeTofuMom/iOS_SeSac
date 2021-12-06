@@ -150,19 +150,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let stringDistance = distanceFormatter.string(fromDistance: totalDistance)
         self.resultDistanceLabel.text = "\(stringDistance)"
 
-        
-        
-    
-            
             let lineDraw = MKPolyline(coordinates: points, count:points.count)
             self.mapKit.addOverlay(lineDraw)
     
-        
-       
-        
-
-           
-        
         
         self.previousCoordinate = location.coordinate
         print("Im still updating")
@@ -217,17 +207,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             print("this is time: \(time)")
             //받아온 시간을 60으로 나눈 몫은 분
             hours += time/3600
+            let leftTime = time%3600
             
-            minutes += time/60
+            minutes += leftTime/60
             //받아온 시간을 60으로 나눈 나머지는 초
-            seconds += time%60
+            seconds += leftTime%60
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
         }
     }
     
     @objc func stopTimer() {
         timer.invalidate()
-        resultTimeLabel.text = "00:00:00"
     }
     
     
@@ -322,14 +312,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @objc func keepTimer() {
         seconds += 1
         
-        if seconds == 60 {
-            minutes += 1
-            seconds = 0
+        if seconds >= 60 {
+            minutes += seconds/60
+            seconds = seconds%60
         }
         
-        if minutes == 60 {
-            hours += 1
-            minutes = 0
+        if minutes >= 60 {
+            hours += minutes/60
+            minutes = minutes%60
         }
         let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
         let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"

@@ -53,6 +53,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 UserDefaults.standard.setValue(Date(), forKey: "sceneDidEnterBackground")
         print(#function)
     }
+    
+    
 
 
 }
