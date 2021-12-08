@@ -188,8 +188,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         navigationBar.layer.borderWidth = 1
         navigationBar.layer.borderColor = UIColor(named: "black")?.cgColor
         
-        resultDistanceLabel.attributedText = outline(string: "11.25km", font: "NotoSansKR-Black", size: 40, outlineSize: 3, textColor: UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0), outlineColor: .black)
-        resultTimeLabel.attributedText = outline(string: "1:00:25", font: "NotoSansKR-Black", size: 40, outlineSize: 3, textColor: UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0), outlineColor: .black)
+        resultDistanceLabel.attributedText = outline(string: "0m", font: "NotoSansKR-Black", size: 40, outlineSize: 3, textColor: UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0), outlineColor: .black)
+        resultTimeLabel.attributedText = outline(string: "0:00:00", font: "NotoSansKR-Black", size: 40, outlineSize: 3, textColor: UIColor(red: 0.4941, green: 0.9922, blue: 0.6941, alpha: 1.0), outlineColor: .black)
         
         resultDistanceLabel.isHidden = true
         resultTimeLabel.isHidden = true
@@ -199,13 +199,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             guard let activity = activity else {
                 return
             }
-            if activity.stationary {
-                self.locationManager.stopUpdatingLocation()
-                print("user motion is stationary")
-            } else {
-                self.locationManager.startUpdatingLocation()
-                print("user motion is not stationery")
+            if self.runMode == .running{
+                if activity.stationary {
+                    self.locationManager.stopUpdatingLocation()
+                    print("user motion is stationary")
+                } else {
+                    self.locationManager.startUpdatingLocation()
+                    print("user motion is not stationery")
+                }
             }
+            
                     
         }
         
@@ -362,6 +365,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             if authorizationStatus == .authorizedAlways {
                 fetchWeatherData()
                 resultTimeLabel.text = "00:00:00"
+                resultDistanceLabel.text = "0m"
+                
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MapViewController.keepTimer), userInfo: nil, repeats: true)
                 self.totalDistance = CLLocationDistance()
                 self.previousCoordinate = locationManager.location?.coordinate
