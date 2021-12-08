@@ -187,9 +187,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 20
-        locationManager.desiredAccuracy = 10
-        locationManager.activityType = .automotiveNavigation
+        locationManager.distanceFilter = 10
         
         
         
