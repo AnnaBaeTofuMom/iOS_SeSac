@@ -31,7 +31,11 @@
 
 🔰 [Github](https://beforeanythingelse.notion.site/Github-0aea63e2cede42f7a7f6e493c6990edd)
 
+---
 
+# App Making Diary 
+
+📘 [Blog](https://ios-developer-storage.tistory.com/category/%EB%9F%AC%EB%8B%9D%20%EC%95%B1%20%EA%B0%9C%EB%B0%9C%EA%B8%B0)
 
 
 
