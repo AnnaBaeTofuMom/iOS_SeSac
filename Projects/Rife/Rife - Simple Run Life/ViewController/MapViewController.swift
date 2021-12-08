@@ -146,10 +146,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         distanceFormatter.units = .metric
         let addedDistance = loc1.distance(from: loc2)
         
-        if addedDistance >= 10 {
-            self.totalDistance += addedDistance
+        
+        
             
-        }
+        
         
         
         
@@ -159,7 +159,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let lineDraw = MKPolyline(coordinates: points, count:points.count)
         self.mapKit.addOverlay(lineDraw)
         
-        self.previousCoordinate = location.coordinate
+            self.totalDistance += addedDistance
+            self.previousCoordinate = location.coordinate
     
         
         
@@ -207,12 +208,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 return
             }
             if self.runMode == .running{
-                if activity.stationary {
+                if activity.running == true && activity.stationary == false {
                     self.locationManager.stopUpdatingLocation()
-                    print("user motion is stationary")
+                    print("user motion is running and not stationary")
                 } else {
                     self.locationManager.startUpdatingLocation()
-                    print("user motion is not stationery")
+                    print("user motion is not running")
                 }
             }
             
