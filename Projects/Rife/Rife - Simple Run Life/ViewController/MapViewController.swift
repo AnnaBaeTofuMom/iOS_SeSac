@@ -146,17 +146,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         distanceFormatter.units = .metric
         let addedDistance = loc1.distance(from: loc2)
         
+        if addedDistance >= 10 {
+            self.totalDistance += addedDistance
+            
+        }
         
-        self.totalDistance += addedDistance
+        
         
         let stringDistance = distanceFormatter.string(fromDistance: totalDistance)
         self.resultDistanceLabel.text = "\(stringDistance)"
 
-            let lineDraw = MKPolyline(coordinates: points, count:points.count)
-            self.mapKit.addOverlay(lineDraw)
-    
+        let lineDraw = MKPolyline(coordinates: points, count:points.count)
+        self.mapKit.addOverlay(lineDraw)
         
         self.previousCoordinate = location.coordinate
+    
+        
+        
         print("Im still updating")
         
     }
@@ -181,6 +187,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 20
+        locationManager.desiredAccuracy = 10
+        locationManager.activityType = .automotiveNavigation
         
         
         
