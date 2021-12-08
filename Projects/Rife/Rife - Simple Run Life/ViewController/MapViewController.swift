@@ -8,7 +8,6 @@
 import UIKit
 import SideMenu
 import MarqueeLabel
-import XCTest
 import MapKit
 import CoreLocation
 import CloudKit
@@ -17,6 +16,7 @@ import Kingfisher
 import SwiftyJSON
 import Alamofire
 import AuthenticationServices
+import CoreMotion
 
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
@@ -41,6 +41,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var recordMemo: String = ""
     var startTime: Date = Date()
     var endTime: Date = Date()
+    let motionManager = CMMotionActivityManager()
+    
     
     
     
@@ -169,7 +171,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         fetchWeatherData()
         locationManager.requestAlwaysAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.pausesLocationUpdatesAutomatically = true
         
         self.mapKit.mapType = MKMapType.standard
         self.mapKit.showsUserLocation = true
@@ -193,6 +195,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         resultTimeLabel.isHidden = true
         setNotifications()
         
+        motionManager.startActivityUpdates(to: .main) { activity in
+            guard let activity = activity else {
+                return
+            }
+            if activity.stationary {
+                self.locationManager.stopUpdatingLocation()
+                print("user motion is stationary")
+            } else {
+                self.locationManager.startUpdatingLocation()
+                print("user motion is not stationery")
+            }
+                    
+        }
         
         //locationManager.startUpdatingLocation()
         
@@ -410,6 +425,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             timer.invalidate()
             (hours, minutes, seconds, fractions) = (0, 0, 0, 0)
             resultTimeLabel.text = "00:00:00"
+            resultDistanceLabel.text = "0m"
             // is when user tapped Save button
             self.mapKit.setUserTrackingMode(.follow, animated: true)
             locationManager.stopUpdatingLocation()

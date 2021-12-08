@@ -455,6 +455,7 @@
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Rife는 당신의 러닝 거리와 위치를 저장해 주는 앱 입니다. 백그라운드에서도 지도상에 달린 경로를 기록하기 위해 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Rife는 당신의 러닝 거리와 위치를 저장해 주는 앱 입니다. 백그라운드에서도 지도상에 달린 경로를 기록하기 위해 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "영상 또는 녹음을 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Rife는 사용자가 러닝을 하고 있는지 여부를 확인하기 위해 모션 정보를 요청하고 있습니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 사용을 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -493,6 +494,7 @@
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Rife는 당신의 러닝 거리와 위치를 저장해 주는 앱 입니다. 백그라운드에서도 지도상에 달린 경로를 기록하기 위해 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Rife는 당신의 러닝 거리와 위치를 저장해 주는 앱 입니다. 백그라운드에서도 지도상에 달린 경로를 기록하기 위해 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "영상 또는 녹음을 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Rife는 사용자가 러닝을 하고 있는지 여부를 확인하기 위해 모션 정보를 요청하고 있습니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 사용을 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
