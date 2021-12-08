@@ -208,12 +208,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 return
             }
             if self.runMode == .running{
-                if activity.running == true && activity.stationary == false {
-                    self.locationManager.stopUpdatingLocation()
-                    print("user motion is running and not stationary")
+                if activity.running == true || activity.walking == true {
+                    if activity.stationary == false {
+                        self.locationManager.startUpdatingLocation()
+                        print("user motion is running or walking and not stationary")
+                        print(activity)
+                    } else {
+                        self.locationManager.stopUpdatingLocation()
+                        print("user motion is running or walking but stationary")
+                        print(activity)
+                    }
+                    
                 } else {
-                    self.locationManager.startUpdatingLocation()
-                    print("user motion is not running")
+                    self.locationManager.stopUpdatingLocation()
+                    print("user motion is not running or walking")
+                    print(activity)
                 }
             }
             
