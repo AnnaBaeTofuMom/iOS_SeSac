@@ -25,8 +25,6 @@
 
 ## What did I learn so far?
 
-🔠 [i18N](https://beforeanythingelse.notion.site/I18N-564005ff43c0437ba387ee65ef133971)
-
 👴 [App Lifecycle](https://beforeanythingelse.notion.site/Day-3-UIKit-View-397baab1612c4028abec6aedd5fe0c4c)
 
 🔰 [Github](https://beforeanythingelse.notion.site/Github-0aea63e2cede42f7a7f6e493c6990edd)
