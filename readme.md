@@ -11,7 +11,7 @@
 </p>
 
 
-## Rife Project (Personal Assignment) 
+## Rife Project (개인 출시앱) 
 
 ❣️ [Introduction](https://www.notion.so/beforeanythingelse/RIFE-PROJECT-Introduction-58ca72a2354340b495ffda7793db33c5)
 
